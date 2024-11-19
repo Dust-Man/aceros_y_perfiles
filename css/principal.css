@@ -16,13 +16,14 @@ html {
 }
 body {
   background-color: var(--color-claro);
-  font-family: var(--fuente-principal);
+  font-family: var(--fuente-principal) !important;
 }
 .section-title {
   font-size: 40px;
   color: var(--color-secundario);
   text-transform: uppercase;
   text-align: center;
+  margin: 20px 0;
 }
 
 /*HEADER*/
@@ -175,6 +176,18 @@ nav a {
 }
 .--grua {
   background-image: url("../img/fondos/grua.jpg");
+}
+.--sucursal-matriz {
+  background-image: url("../img/sucursales/matriz.png");
+}
+.--sucursal-sur-oriente {
+  background-image: url("../img/sucursales/sur-oriente.png");
+}
+.--sucursal{
+  background-image: url("../img/fondos/sucursal.jpg");
+}
+.--sucursal-azujelos{
+  background-image: url("../img/sucursales/azulejos.png");
 }
 .--sucursal-matriz {
   background-image: url("../img/sucursales/matriz.png");

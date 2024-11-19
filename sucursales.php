@@ -19,7 +19,7 @@
             <a href="#contacto" class="boton-accion">Ir</a>
         </div>
 
-    <section id="experiencia-ubicaciones" class="layout2 --sucursal-matriz">
+        <section id="experiencia-ubicaciones" class="layout2 --sucursal-matriz">
             <div>
                 <p class="texto-medio-grande --no-mbottom">
                     <span class="texto-medio ">Aceros y Perfiles Arciniega "Matriz"</span>
@@ -37,59 +37,53 @@
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d150.69417751034832!2d-99.5641527!3d19.940208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d249df153488f7%3A0xe939d90f4e7af2c!2sConcretos%20Arciniega!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx"
                         allowfullscreen="" loading="lazy"></iframe>
                 </div>
-
-    
-    </div>
-</section>
-
-
-<section id="experiencia-ubicaciones" class="layout2 --imagen-paredes-concreto">
-    <!-- Primera parte: Información de experiencia -->
-    <div>
-        <p class="texto-medio-grande">
-            <span>Más de</span><span class="texto-medio">30 años</span><span>Construyendo sueños</span>
-        </p>
-        <div class="contenedor-de-texto">
-            <p>Desde 1992 nos hemos encargado de distribuir materiales para construcción a los lugares más importantes de la zona norte del Estado de México.</p>
-            <p>Con dos sucursales especializadas en aceros, perfiles y materiales; una sucursal dedicada a baños y azulejos, y otra a pavimentaciones, tenemos todo para hacer realidad tus sueños.</p>
-        </div>
-    </div>
-
-    <!-- Segunda parte: Mapas de las ubicaciones -->
-    <div>
-        <h2>Ubicaciones de nuestras sucursales</h2>
-        <p>Encuentra nuestras sucursales en los siguientes mapas:</p>
-
-        <!-- Mapa 1: Concretos Arciniega -->
-        <h3>Concretos Arciniega</h3>
-        <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d150.69417751034832!2d-99.5641527!3d19.940208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d249df153488f7%3A0xe939d90f4e7af2c!2sConcretos%20Arciniega!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx"
-                width="100%" 
-                height="300" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy"
-            ></iframe>
-        </div>
-
-    
-    </div>
-</section>
-
-
-
-
-        <section id="contacto" class="layout2 --imagen-bano-aesteri">
-            <div>
-                <h2 class="texto-contacto">Ingresa tus datos y nos pondremos en contacto</h2>
-            </div>
-            <div>
-                <?php
-                    include("./form-contacto.php")
-                ?>
             </div>
         </section>
+
+        <section id="experiencia-ubicaciones" class="layout2 --sucursal-sur-oriente">
+            <div>
+                <p class="texto-medio-grande --no-mbottom">
+                    <span class="texto-medio ">Aceros y Perfiles Arciniega "Sucursal sur-oriente"</span>
+                </p>
+                <div class="contenedor-de-texto">
+                    <p>Ubicados en Jilotepec Centro, tenemos los mejores aceros y perfiles al mejor precio y de la mayor
+                        calidad para tu proyecto. Da clic en "ir" para conocer más de esta sucursal</p>
+                </div>
+                <a href="" class="boton-accion">Ir</a>
+            </div>
+            <div>
+
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.6108593564586!2d-99.56587082494951!3d19.94079678145002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d249c89859a627%3A0x9c840fc353883b14!2sAceros%20y%20Perfiles%20Arciniega!5e0!3m2!1ses-419!2smx!4v1731590916835!5m2!1ses-419!2smx"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="experiencia-ubicaciones" class="layout2 --sucursal-azujelos">
+            <div>
+                <p class="texto-medio-grande --no-mbottom">
+                    <span class="texto-medio ">Aceros y Perfiles Arciniega "Sucursal sur-oriente"</span>
+                </p>
+                <div class="contenedor-de-texto">
+                    <p>Ubicados en Jilotepec Centro, tenemos los mejores aceros y perfiles al mejor precio y de la mayor
+                        calidad para tu proyecto. Da clic en "ir" para conocer más de esta sucursal</p>
+                </div>
+                <a href="" class="boton-accion">Ir</a>
+            </div>
+            <div>
+
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15001.699697493255!2d-99.5577138826172!3d19.948624444062173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2363d6e5be7a7%3A0x569bbac978691f6f!2sCEMENTO%20CRUZ%20AZUL!5e0!3m2!1ses-419!2smx!4v1731592348055!5m2!1ses-419!2smx"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+
+
     </main>
 </body>
 
