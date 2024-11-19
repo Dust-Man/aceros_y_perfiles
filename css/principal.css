@@ -37,10 +37,10 @@ header {
   display: flex;
   align-items: center;
   height: 7vh;
-  padding-left: 2rem;
   width: 100%;
   justify-content: space-between;
-  padding: 2rem;
+  padding: 25px;
+  padding-left: 2rem;
 }
 
 /* Clase para ocultar el header al hacer scroll */
@@ -49,7 +49,7 @@ header.hide {
 }
 
 nav {
-  width: 80vw;
+  width: 90vw;
 }
 nav a {
   color: var(--color-principal);
@@ -61,13 +61,16 @@ nav a {
   width: 7vw;
 }
 .logo {
-  max-width: 5rem;
+  width: 90px;
+  height: 90px;
 }
 .nav__lista {
   display: flex;
   list-style-type: none;
   justify-content: space-around;
   gap: 1rem;
+  width: 100%;
+  margin-bottom: 0;
 }
 .nav__lista li a {
   text-decoration: none;
@@ -640,7 +643,11 @@ input:not(:placeholder-shown) ~ .reset {
   display: none;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 990px) {
+
+  header{
+    height: 8vh;
+  }
   /* Botón para abrir el menú */
   .abrir-menu {
     display: block;

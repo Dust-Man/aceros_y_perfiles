@@ -29,7 +29,7 @@
             <li><a href="sucursales.php">Sucursales</a></li>
             <li><a href="#">Contacto</a></li>
             <li><a href="noticias.php">Noticias</a></li>
-            <li><a href="productos_1.php">Preguntas F</a></li>
+            <li><a href="productos_1.php">Preguntas Frecuentes</a></li>
         </ul>
     </nav>
 
