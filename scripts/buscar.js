@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function fetchProductos(page = 1, search = "") {
     try {
       const response = await fetch(
-        `php/productos-sucursal-1/paginacion_1.php?pagina=${page}&search=${search}`
+        `php/paginacion.php?pagina=${page}&search=${search}`
       );
 
       if (!response.ok) {
@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Crear tarjetas de productos
     productos.forEach((producto) => {
       const productoCard = `
                 <div class="card">
@@ -64,20 +63,17 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderPaginacion(totalPaginas, paginaActual) {
     paginacionContainer.innerHTML = ""; // Limpiar el contenedor de paginación
 
-    // Enlace a la página anterior
     if (paginaActual > 1) {
       paginacionContainer.innerHTML += `<a href="#" data-page="${
         paginaActual - 1
       }">&laquo; Anterior</a>`;
     }
 
-    // Enlaces para todas las páginas
     for (let i = 1; i <= totalPaginas; i++) {
       const claseActiva = i === paginaActual ? "active" : "";
       paginacionContainer.innerHTML += `<a href="#" class="${claseActiva}" data-page="${i}">${i}</a>`;
     }
 
-    // Enlace a la página siguiente
     if (paginaActual < totalPaginas) {
       paginacionContainer.innerHTML += `<a href="#" data-page="${
         paginaActual + 1
@@ -95,14 +91,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const searchValue = searchInput ? searchInput.value : "";
       if (page) {
         fetchProductos(parseInt(page), searchValue);
-        // Desplazar la página hacia la parte superior de los productos
-        productosContainer.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
+        // Desplazar la vista al inicio de la página
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth", // Agrega una transición suave
         });
       }
     }
   });
+
   if (searchInput) {
     searchInput.addEventListener("input", (e) => {
       const searchValue = e.target.value;
@@ -116,6 +113,13 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         fetchProductos(1, "");
       }, 0);
+    });
+
+    // Evento para manejar el envío del formulario
+    searchForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const searchValue = searchInput.value;
+      fetchProductos(1, searchValue);
     });
   }
 

@@ -1,5 +1,5 @@
 <?php
-include '../conexion.php';
+include 'conexion.php';
 
 // Configuración de la paginación
 $elementosPorPagina = 12;
