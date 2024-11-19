@@ -405,7 +405,7 @@ nav a {
   }
 }
 
-/* Estilos cards  */
+/* Estilos contenedores de las cards*/
 #results {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -418,8 +418,9 @@ nav a {
   display: flex;
   padding: 115px;
   padding-bottom: 2px;
-  grid-template-columns: repeat(, 1fr);
+  grid-template-columns: repeat(1, 1fr);
 }
+/* Form del input */
 .form {
   --timing: 0.3s;
   --width-of-input: 200px;
@@ -439,7 +440,7 @@ nav a {
   transition: border-radius 0.5s ease;
   background: var(--input-bg, #fff);
 }
-/* styling of Input */
+
 .input {
   font-size: 0.9rem;
   background-color: transparent;
@@ -449,7 +450,7 @@ nav a {
   padding-block: 0.7em;
   border: none;
 }
-/* styling of animated border */
+
 .form:before {
   content: "";
   position: absolute;
@@ -463,7 +464,7 @@ nav a {
   border-radius: 1px;
   transition: transform var(--timing) ease;
 }
-/* Hover on Input */
+
 .form:focus-within {
   border-radius: var(--after-border-radius);
 }
@@ -490,7 +491,7 @@ input:not(:placeholder-shown) ~ .reset {
   width: 23px;
   margin-top: 3px;
 }
-/* Resposive */
+/* Resposive form de buscar */
 @media (max-width: 1024px) {
   .form {
     width: 170px;
@@ -510,39 +511,6 @@ input:not(:placeholder-shown) ~ .reset {
   }
   .input {
     font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 1024px) {
-  #results {
-    grid-template-columns: repeat(3, 1fr);
-    padding: 100px;
-  }
-}
-
-@media (max-width: 1030px) {
-  #results {
-    padding-bottom: 20px;
-    padding-top: 20px;
-  }
-}
-@media (max-width: 768px) {
-  #results {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 100px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  #results {
-    grid-template-columns: 1fr;
-    padding-top: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-
-    padding-bottom: 20px;
   }
 }
 /* Estilos para las cards */
@@ -604,6 +572,40 @@ input:not(:placeholder-shown) ~ .reset {
   font-size: 12px;
   padding-top: 15px;
 }
+/* Responsive cards  */
+
+@media (max-width: 1024px) {
+  #results {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 100px;
+  }
+}
+
+@media (max-width: 1030px) {
+  #results {
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+}
+@media (max-width: 768px) {
+  #results {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  #results {
+    grid-template-columns: 1fr;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    padding-bottom: 20px;
+  }
+}
 
 @media (max-width: 480px) {
   .category {
@@ -642,6 +644,7 @@ input:not(:placeholder-shown) ~ .reset {
   color: white;
 }
 
+/* Menu de camargo */
 * {
   margin: 0;
   padding: 0;
