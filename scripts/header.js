@@ -34,3 +34,27 @@ cerrar.addEventListener("click", () => {
     cerrar.style.display = "none";  // Ocultar el botón de cerrar
     abrir.style.display = "block";  // Mostrar el botón de abrir
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const fadeElements = document.querySelectorAll(".fade-in");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                entry.target.classList.remove("hide");  // Asegura que se quite la clase hide
+            } else {
+                entry.target.classList.add("hide");
+                // Mantiene el "fade-in" para que se pueda reactivar después de un pequeño retraso
+                setTimeout(() => {
+                    entry.target.classList.remove("show");
+                    entry.target.classList.add("fade-in"); // Vuelve a permitir la animación de entrada
+                }, 800); // Tiempo de espera antes de volver a aplicar la animación
+            }
+        });
+    }, { threshold: 0.1 }); // Activa cuando el 10% del elemento es visible
+
+    fadeElements.forEach(element => {
+        observer.observe(element);
+    });
+});

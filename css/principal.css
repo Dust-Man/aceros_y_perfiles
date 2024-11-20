@@ -793,3 +793,28 @@ input:not(:placeholder-shown) ~ .reset {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
 }
+
+/*//////////////animaciones////////*/
+
+/*//////////////animaciones////////*/
+
+/* Animación inicial: oculto con opacidad */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease; /* Aumentamos el tiempo para que sea más lento */
+}
+
+/* Animación visible: muestra con opacidad */
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animación para desaparecer (reversa) */
+.fade-in.hide {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease; /* Aumentamos el tiempo también aquí */
+}
+
