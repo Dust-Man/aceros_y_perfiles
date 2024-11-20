@@ -183,10 +183,10 @@ nav a {
 .--sucursal-sur-oriente {
   background-image: url("../img/sucursales/sur-oriente.png");
 }
-.--sucursal{
+.--sucursal {
   background-image: url("../img/fondos/sucursal.jpg");
 }
-.--sucursal-azujelos{
+.--sucursal-azujelos {
   background-image: url("../img/sucursales/azulejos.png");
 }
 .--sucursal-matriz {
@@ -250,8 +250,26 @@ nav a {
 .--color-dark {
   color: #000;
 }
+.--color-light {
+  color: #fff;
+}
+.--color-principal{
+  color: var(--color-principal);
+}
 .--no-mbottom {
   margin-bottom: 0;
+}
+.padding-top-30px {
+  padding-top: 50px;
+}
+.center {
+  margin: 0 auto !important;
+  text-align: center;
+  width: 100%;
+}
+
+.title-caption {
+  font-size: 20px;
 }
 /*LANDING PAGE */
 
@@ -317,6 +335,7 @@ nav a {
 .--form-landing {
   width: 100%;
   padding: 50px;
+  padding-top: 100px;
 }
 .--form-landing input,
 .--form-landing textarea {
@@ -336,6 +355,40 @@ nav a {
 }
 .--form-landing textarea {
   height: 300px;
+}
+.formulario-contacto {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+.lista-de-formas {
+  margin-left: 30px;
+}
+.lista-de-formas li {
+  font-size: 25px;
+}
+.lista-de-formas li::marker{
+  color: var(--color-principal);
+}
+.lista-de-formas a{
+  color: var(--color-principal);
+  text-decoration: none;
+}
+.forma-contacto-nombre {
+  font-size: 27px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+.formas-contacto{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 /* NOTICIAS */
 .noticias {
@@ -657,8 +710,7 @@ input:not(:placeholder-shown) ~ .reset {
 }
 
 @media screen and (max-width: 990px) {
-
-  header{
+  header {
     height: 8vh;
   }
   /* Botón para abrir el menú */

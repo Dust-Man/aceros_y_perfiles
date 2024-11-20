@@ -27,7 +27,7 @@
             <li><a href="#">Sobre nosotros</a></li>
             <li><a href="./productos_1.php">Productos</a></li>
             <li><a href="sucursales.php">Sucursales</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="contacto.php">Contacto</a></li>
             <li><a href="noticias.php">Noticias</a></li>
             <li><a href="productos_1.php">Preguntas Frecuentes</a></li>
         </ul>
