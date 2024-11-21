@@ -237,6 +237,9 @@ nav a {
 .--mbottom60 {
   margin-bottom: 60px;
 }
+.--mbottom30 {
+  margin-bottom: 30px;
+}
 .--bold {
   font-weight: bold;
 }
@@ -372,8 +375,18 @@ nav a {
   color: var(--color-principal);
 }
 .lista-de-formas a{
-  color: var(--color-principal);
+  color: var(--color-oscuro);
   text-decoration: none;
+}
+.boton-derecha{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.boton-centro{
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .forma-contacto-nombre {
   font-size: 27px;

@@ -27,10 +27,22 @@
             </div>
             <div>
                 <div class="contenedor-de-texto">
-                    <p>Desde 1992 nos hemos encargado de distribuir materiales para construcción a los lugares más
-                        importantes de la zona norte del Estado de México. </p>
-                    <p>Con dos sucursales especializadas en aceros, perfiles y materiales; una sucursal dedicada a baños
-                        y azulejos y otra a pavimentaciones, tenemos todo para hacer realidad tus sueños.</p>
+                    <p>En <strong>Aceros y Perfiles Arciniega</strong>, nos especializamos en la distribución de materiales
+                        para construcción, abasteciendo a los proyectos más importantes de la zona norte del Estado de
+                        México.</p>
+                        <br>
+                    <p>Contamos con cuatro sucursales especializadas para cubrir todas tus necesidades:</p>
+                    <br>
+                    <ul>
+                        <li><strong>Aceros, perfiles y materiales:</strong> en dos ubicaciones estratégicas.</li>
+                        <li><strong>Baños y azulejos:</strong> con una amplia variedad de estilos y diseños.</li>
+                        <li><strong>Pavimentaciones:</strong> ideales para proyectos residenciales, comerciales e
+                            industriales.</li>
+                    </ul>
+                    <br>
+                    <p>Tenemos todo lo necesario para convertir tus ideas en realidad. ¡Confía en nuestra experiencia y
+                        calidad!</p>
+
                 </div>
 
             </div>
@@ -55,10 +67,10 @@
                 <img class="imagen-sucursales" src="./img/sucursalazulejos.png" alt="Baños y azulejos Arciniega">
             </div>
 
-            
-            
+
+
         </section>
-        
+
         <section id="clientes">
             <h2 class="section-title">Nuestros clientes</h2>
             <div class="layout3 --l390vh">
@@ -81,9 +93,9 @@
                     <div class="contenedor-cliente">
                         <img src="./img/cliente3.png" alt="Cliente 1">
                     </div>
-                        <p class="--resalte-secundario">"DJ tilin insano 4000"</p>
-                        <p>"Gracias a ellos construí mi discoteca" <br> </p>
-                    
+                    <p class="--resalte-secundario">Ramon Eugenio Cruz</p>
+                    <p>Envíos rápidos y seguros.<br> </p>
+
                 </div>
 
             </div>
