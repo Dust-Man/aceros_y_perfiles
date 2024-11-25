@@ -35,26 +35,26 @@ cerrar.addEventListener("click", () => {
     abrir.style.display = "block";  // Mostrar el botón de abrir
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const fadeElements = document.querySelectorAll(".fade-in");
+////////////animaciones////////////////////
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-                entry.target.classList.remove("hide");  // Asegura que se quite la clase hide
-            } else {
-                entry.target.classList.add("hide");
-                // Mantiene el "fade-in" para que se pueda reactivar después de un pequeño retraso
-                setTimeout(() => {
-                    entry.target.classList.remove("show");
-                    entry.target.classList.add("fade-in"); // Vuelve a permitir la animación de entrada
-                }, 800); // Tiempo de espera antes de volver a aplicar la animación
-            }
-        });
-    }, { threshold: 0.1 }); // Activa cuando el 10% del elemento es visible
+// Función para revelar elementos al hacer scroll
+function revealOnScroll() {
+    const reveals = document.querySelectorAll('.reveal');
+    for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 150; // Distancia desde la parte superior de la ventana
 
-    fadeElements.forEach(element => {
-        observer.observe(element);
-    });
-});
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add('active');
+        } else {
+            reveals[i].classList.remove('active');
+        }
+    }
+}
+
+// Ejecutar la función al hacer scroll
+window.addEventListener('scroll', revealOnScroll);
+
+// Ejecutar la función al cargar la página para verificar elementos visibles
+window.onload = revealOnScroll;
