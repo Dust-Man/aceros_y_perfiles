@@ -24,6 +24,10 @@
         margin: 0 auto !important;
         padding-top: 50px !important;
     }
+    .boton-envio{
+        color:#0e8abb !important;
+        border-color: #0e8abb !important;
+    }
 </style>
 <body>
     <?php
