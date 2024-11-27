@@ -164,6 +164,11 @@ nav a {
 /*FONDOS*/
 .--imagen-cemento-c-azul {
   background-image: url("../img/fondos/cemento-cruz-azul.png");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Esto mantiene la imagen fija */
+  
 }
 .--imagen-constructores {
   background-image: url("../img/fondos/constructores.png");
@@ -807,8 +812,9 @@ input:not(:placeholder-shown) ~ .reset {
   }
 }
 
+/*/////////////////////////////////////////////////////////animaciones/////////////////////////////////////////////////////*/
 
-/*/////////animaciones/////*/
+
 
 /* Estilos para los textos y enlaces que se revelarán al hacer scroll */
 .reveal {

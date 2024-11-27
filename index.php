@@ -99,7 +99,7 @@
     </main>
 
     <script src="./scripts/header.js"></script>
-    <script src="./scripts/animation.js"></script> <!-- Asegúrate de que la ruta sea correcta -->
+
 </body>
 
 </html>

@@ -35,7 +35,9 @@ cerrar.addEventListener("click", () => {
     abrir.style.display = "block";  // Mostrar el botón de abrir
 });
 
-////////////animaciones////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////animaciones///////////////////////////////////////////////
 
 // Función para revelar elementos al hacer scroll
 function revealOnScroll() {

@@ -44,43 +44,41 @@
                             include("./form-contacto.php");?>
                 </div>
                 <section class="formulario-contacto --color-dark">
-                <h2 class="section-title --color-principal "> Otras formas de contacto:</h2>
-                    <div class="formas-contacto">
-                        <p class="forma-contacto-nombre --color-principal "><i class="fa-solid fa-tty"></i> Teléfonos:</p>
-                        <ul class=" lista-de-formas">
-                            <li class="">761-73-4-29-37</li>
-                            <li class="">761-73-4-06-60</li>
-                            <li class="">761-73-4-03-02</li>
-                            <li class="">761-73-4-07-13 </li>
-                        </ul>
-                    </div>
-                    <div class="formas-contacto">
-                        <p class="forma-contacto-nombre --color-principal "><i class="fa-brands fa-whatsapp"></i> WhatsApp:</p>
-                        <ul class=" lista-de-formas">
-                            <li class="">55 45 40 98 28</li>
-                            <li class="">55 45 40 29 10</li>
-                            <li class=""><a href="tel:+527221040075">722-10-4-00-75</a></li>
-                        </ul>
-                    </div>
-                    <div class="formas-contacto">
-                        <p class="forma-contacto-nombre --color-principal "><i class="fa-regular fa-envelope"></i> Correo Electrónico:</p>
-                        <ul class=" lista-de-formas">
-                            <li class=""><a href="mailto:concretosarciniega@gmail.com">concretosarciniega@gmail.com</a></li>
-                        </ul>
-                    </div>
-                    <div class="formas-contacto">
-                        <p class="forma-contacto-nombre --color-principal "><i class="fa-brands fa-facebook"></i></i> Facebook:</p>
-                        <ul class=" lista-de-formas">
-                            <li class=""><a href="https://www.facebook.com/concretos.arciniega.94/" target="__blank">/Concretos Arciniega</a></li>
-                        </ul>
-                        <p class="forma-contacto-nombre --color-principal "><i class="fa-brands fa-instagram"></i></i> Instagram:</p>
-                        <ul class=" lista-de-formas">
-                            <li class=""><a href="https://www.instagram.com/concretosarciniega/">@concretosarcinega</a></li>
-                        </ul>
-                    </div>
-                    </div>
-                    
-                </section>
+    <h2 class="section-title --color-principal reveal">Otras formas de contacto:</h2>
+    <div class="formas-contacto reveal">
+        <p class="forma-contacto-nombre --color-principal"><i class="fa-solid fa-tty"></i> Teléfonos:</p>
+        <ul class="lista-de-formas">
+            <li>761-73-4-29-37</li>
+            <li>761-73-4-06-60</li>
+            <li>761-73-4-03-02</li>
+            <li>761-73-4-07-13</li>
+        </ul>
+    </div>
+    <div class="formas-contacto reveal">
+        <p class="forma-contacto-nombre --color-principal"><i class="fa-brands fa-whatsapp"></i> WhatsApp:</p>
+        <ul class="lista-de-formas">
+            <li>55 45 40 98 28</li>
+            <li>55 45 40 29 10</li>
+            <li><a href="tel:+527221040075">722-10-4-00-75</a></li>
+        </ul>
+    </div>
+    <div class="formas-contacto reveal">
+        <p class="forma-contacto-nombre --color-principal"><i class="fa-regular fa-envelope"></i> Correo Electrónico:</p>
+        <ul class="lista-de-formas">
+            <li><a href="mailto:concretosarciniega@gmail.com">concretosarciniega@gmail.com</a></li>
+        </ul>
+    </div>
+    <div class="formas-contacto reveal">
+        <p class="forma-contacto-nombre --color-principal"><i class="fa-brands fa-facebook"></i> Facebook:</p>
+        <ul class="lista-de-formas">
+            <li><a href="https://www.facebook.com/concretos.arciniega.94/" target="__blank">/Concretos Arciniega</a></li>
+        </ul>
+        <p class="forma-contacto-nombre --color-principal"><i class="fa-brands fa-instagram"></i> Instagram:</p>
+        <ul class="lista-de-formas">
+            <li><a href="https://www.instagram.com/concretosarciniega/">@concretosarcinega</a></li>
+        </ul>
+    </div>
+</section>
             </section>
             
         </div>
