@@ -110,3 +110,88 @@ body {
 .sidebar {
     animation: slideIn 0.5s ease-out;
 }
+
+/* Estilo del formulario */
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+}
+
+/* Etiquetas */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Campos de texto */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="file"],
+form input[type="number"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    background: #f9f9f9;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #0073aa;
+    box-shadow: 0 0 5px rgba(0, 115, 170, 0.5);
+    outline: none;
+}
+
+/* Botones */
+form button,
+form input[type="submit"] {
+    background: #0073aa;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover,
+form input[type="submit"]:hover {
+    background: #005f8a;
+}
+
+/* Textarea */
+form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Mensajes de error */
+form .error {
+    color: #d9534f;
+    font-size: 0.875rem;
+    margin-bottom: 10px;
+}
+
+/* Mensajes de éxito */
+form .success {
+    color: #5cb85c;
+    font-size: 0.875rem;
+    margin-bottom: 10px;
+}
