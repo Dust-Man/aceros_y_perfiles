@@ -49,19 +49,19 @@
         }
 
         .faq-answer {
-            max-height: 0; /* Altura máxima inicial */
-            overflow: hidden; /* Evitar que el contenido se desborde */
-            opacity: 0; /* Opacidad inicial */
-            transition: max-height 1.0s ease, opacity 1.0s ease; /* Transiciones para suavizar la animación */
-            padding: 0 1rem; /* Espaciado lateral */
-            color: black;
-        }
+    max-height: 0; /* Start with a height of 0 */
+    overflow: hidden; /* Hide overflow */
+    opacity: 0; /* Start with opacity 0 */
+    transition: max-height 0.4s ease, opacity 0.4s ease; /* Smooth transition for max-height and opacity */
+    color: black ;
+}
 
-        .faq-answer.active {
-            max-height: 200px; /* Ajusta según el contenido */
-            opacity: 1; /* Cambiar opacidad a 1 */
-            padding: 1rem; /* Espaciado completo al abrir */
-        }
+.faq-answer.active {
+    max-height: 200px; /* Set to a value that accommodates your content */
+    opacity: 1; /* Fully visible */
+}
+
+
     </style>
 </head>
 

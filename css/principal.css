@@ -820,7 +820,7 @@ input:not(:placeholder-shown) ~ .reset {
 .reveal {
   opacity: 0; /* Inicialmente invisible */
   transform: translateY(20px); /* Desplazado hacia abajo */
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* Transición suave */
+  transition: opacity 0.4s ease-out, transform 0.3s ease-out; /* Transición suave */
 }
 
 .reveal.active {
