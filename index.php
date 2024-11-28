@@ -61,8 +61,8 @@
 
         <!-- Sección Clientes -->
         <section id="clientes" class="reveal">
-            <h2 class="section-title reveal">Nuestros clientes</h2>
-            <div class="layout3 --l390vh">
+        <h2 class="section-title reveal" style="margin-top: 120px;">Nuestros clientes</h2>
+        <div class="layout3 --l390vh">
                 <div class="cliente">
                     <div class="contenedor-cliente">
                         <img src="./img/cliente1.png" alt="Cliente 1">

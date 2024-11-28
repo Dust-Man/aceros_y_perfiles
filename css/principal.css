@@ -827,3 +827,6 @@ input:not(:placeholder-shown) ~ .reset {
   opacity: 1; /* Visible */
   transform: translateY(0); /* Regresa a su posición original */
 }
+#clientes {
+    margin-top: 50px; /* Ajusta el valor según sea necesario */
+}
