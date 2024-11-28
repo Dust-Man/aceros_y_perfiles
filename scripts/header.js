@@ -34,3 +34,29 @@ cerrar.addEventListener("click", () => {
     cerrar.style.display = "none";  // Ocultar el botón de cerrar
     abrir.style.display = "block";  // Mostrar el botón de abrir
 });
+
+
+
+///////////////////////////////////////////////////////////////////////////animaciones///////////////////////////////////////////////
+
+// Función para revelar elementos al hacer scroll
+function revealOnScroll() {
+    const reveals = document.querySelectorAll('.reveal');
+    for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 150; // Distancia desde la parte superior de la ventana
+
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add('active');
+        } else {
+            reveals[i].classList.remove('active');
+        }
+    }
+}
+
+// Ejecutar la función al hacer scroll
+window.addEventListener('scroll', revealOnScroll);
+
+// Ejecutar la función al cargar la página para verificar elementos visibles
+window.onload = revealOnScroll;

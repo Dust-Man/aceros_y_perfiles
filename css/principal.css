@@ -164,6 +164,11 @@ nav a {
 /*FONDOS*/
 .--imagen-cemento-c-azul {
   background-image: url("../img/fondos/cemento-cruz-azul.png");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Esto mantiene la imagen fija */
+  
 }
 .--imagen-constructores {
   background-image: url("../img/fondos/constructores.png");
@@ -236,6 +241,9 @@ nav a {
 }
 .--mbottom60 {
   margin-bottom: 60px;
+}
+.--mbottom30 {
+  margin-bottom: 30px;
 }
 .--bold {
   font-weight: bold;
@@ -372,8 +380,18 @@ nav a {
   color: var(--color-principal);
 }
 .lista-de-formas a{
-  color: var(--color-principal);
+  color: var(--color-oscuro);
   text-decoration: none;
+}
+.boton-derecha{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.boton-centro{
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .forma-contacto-nombre {
   font-size: 27px;
@@ -792,4 +810,20 @@ input:not(:placeholder-shown) ~ .reset {
     display: block;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
+}
+
+/*/////////////////////////////////////////////////////////animaciones/////////////////////////////////////////////////////*/
+
+
+
+/* Estilos para los textos y enlaces que se revelarán al hacer scroll */
+.reveal {
+  opacity: 0; /* Inicialmente invisible */
+  transform: translateY(20px); /* Desplazado hacia abajo */
+  transition: opacity 0.4s ease-out, transform 0.3s ease-out; /* Transición suave */
+}
+
+.reveal.active {
+  opacity: 1; /* Visible */
+  transform: translateY(0); /* Regresa a su posición original */
 }
