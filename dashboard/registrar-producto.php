@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-
+<h1>Registrar un producto</h1>
 <form action="registrar-producto.php" method="POST" enctype="multipart/form-data">
     <label for="title">Título:</label>
     <input type="text" id="title" name="title" required>

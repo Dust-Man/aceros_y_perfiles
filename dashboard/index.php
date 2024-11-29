@@ -40,9 +40,8 @@
 
         </div>
     </div>
-</body>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
     const menuLinks = document.querySelectorAll('.menu a');
     const contentDiv = document.querySelector('.main-content');
 
@@ -56,7 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(html => {
                 contentDiv.innerHTML = html;
 
-                // Reasignar eventos a los formularios dinámicamente cargados
+                // Reasignar eventos a los elementos dinámicos
+                setupDynamicEvents();
                 assignFormSubmitHandler();
             })
             .catch(err => {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     };
 
-    // Añadir evento a los enlaces del menú
+    // Añadir eventos a los enlaces del menú
     menuLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault(); // Evita el comportamiento por defecto del enlace
@@ -76,6 +76,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Configurar eventos dinámicos (agregar y eliminar productos)
+    const setupDynamicEvents = () => {
+        const agregarProductoBtn = document.getElementById('agregarProducto');
+        const productosContainer = document.getElementById('productosContainer');
+        const productoTemplate = document.getElementById('productoTemplate')?.content;
+
+        if (agregarProductoBtn && productosContainer && productoTemplate) {
+            agregarProductoBtn.addEventListener('click', () => {
+                const nuevoProducto = productoTemplate.cloneNode(true);
+                productosContainer.appendChild(nuevoProducto);
+            });
+
+            productosContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('eliminarProducto')) {
+                    e.target.closest('.producto').remove();
+                }
+            });
+        }
+    };
 
     // Función para manejar el envío del formulario con AJAX
     const assignFormSubmitHandler = () => {
@@ -97,6 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     .then(result => {
                         contentDiv.innerHTML = `<div><h1>Éxito</h1><p>${result}</p></div>`;
                         // Reasignar eventos en caso de contenido nuevo
+                        setupDynamicEvents();
                         assignFormSubmitHandler();
                     })
                     .catch(err => {
@@ -107,10 +128,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Asignar manejadores iniciales
+    // Inicializar eventos
+    setupDynamicEvents();
     assignFormSubmitHandler();
 });
-</script>
+
+    </script>
+
+</body>
+
 
 
 </html>
