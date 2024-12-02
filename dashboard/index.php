@@ -77,7 +77,7 @@
         });
     });
 
-    // Configurar eventos dinámicos (agregar y eliminar productos)
+    // Configurar eventos dinámicos para elementos específicos (e.g., productos)
     const setupDynamicEvents = () => {
         const agregarProductoBtn = document.getElementById('agregarProducto');
         const productosContainer = document.getElementById('productosContainer');
@@ -115,7 +115,8 @@
                         return response.text();
                     })
                     .then(result => {
-                        contentDiv.innerHTML = `<div><h1>Éxito</h1><p>${result}</p></div>`;
+                        // Manejar el resultado después de enviar
+                        contentDiv.innerHTML = ``;
                         // Reasignar eventos en caso de contenido nuevo
                         setupDynamicEvents();
                         assignFormSubmitHandler();
@@ -128,13 +129,39 @@
         });
     };
 
+    // Manejar clics en los botones de "Gestionar Envío"
+    const setupGestionarEnvioHandler = () => {
+        contentDiv.addEventListener('click', (e) => {
+            if (e.target.classList.contains('cargarFormulario')) {
+                const notaId = e.target.getAttribute('data-nota-id');
+
+                // Cargar el formulario dinámicamente
+                fetch(`cargar_formulario_envio.php?nota_id=${notaId}`)
+                    .then(response => {
+                        if (!response.ok) throw new Error('Error al cargar el formulario.');
+                        return response.text();
+                    })
+                    .then(html => {
+                        contentDiv.innerHTML = html;
+
+                        // Asignar eventos al formulario cargado
+                        assignFormSubmitHandler();
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        contentDiv.innerHTML = "<p>Error al cargar el formulario.</p>";
+                    });
+            }
+        });
+    };
+
     // Inicializar eventos
     setupDynamicEvents();
     assignFormSubmitHandler();
+    setupGestionarEnvioHandler();
 });
 
     </script>
-
 </body>
 
 

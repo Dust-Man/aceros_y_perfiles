@@ -144,6 +144,8 @@ form input[type="email"],
 form input[type="password"],
 form input[type="file"],
 form input[type="number"],
+form input[type="date"],
+form input[type="time"],
 form select,
 form textarea {
     width: 100%;
@@ -167,7 +169,7 @@ form textarea:focus {
 
 /* Botones */
 form button,
-form input[type="submit"] {
+form input[type="submit"], button {
     background: #0073aa;
     color: #fff;
     padding: 10px 15px;
@@ -202,3 +204,80 @@ form .success {
     font-size: 0.875rem;
     margin-bottom: 10px;
 }
+/* Contenedor de la tabla */
+form .table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+/* Estilo general de la tabla */
+form table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Encabezado de la tabla */
+form th {
+    background: #0073aa;
+    color: #fff;
+    text-align: left;
+    padding: 10px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+}
+
+/* Celdas de la tabla */
+form td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    background: #fff;
+    transition: background-color 0.3s ease;
+}
+
+/* Alternar color de filas */
+form tr:nth-child(even) td {
+    background: #f4f4f9;
+}
+
+/* Hover en filas */
+form tr:hover td {
+    background: #e8f6ff;
+}
+
+/* Celdas editables o de entrada */
+form td input[type="text"],
+form td select,
+form td textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #333;
+    background: #f9f9f9;
+    box-sizing: border-box;
+}
+
+/* Botones dentro de la tabla */
+form td button {
+    background: #0073aa;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form td button:hover {
+    background: #005f8a;
+}
+

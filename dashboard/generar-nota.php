@@ -58,6 +58,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ':cantidad' => $cantidad,
                 ':subtotal' => $subtotal,
             ]);
+            $encabezado_productos_id = $conexion->lastInsertId();
+            $sqlProdEnviar ="INSERT INTO prod_por_enviar(id_nota,encabezado_productos_id,enviados,por_enviar) 
+                            VALUES (:id_nota, :encabezado_productos_id, :enviados, :por_enviar)";
+            $stmtProdEnviar = $conexion -> prepare($sqlProdEnviar);
+            $stmtProdEnviar-> execute([
+                ':id_nota' => $nota_id,
+                ':encabezado_productos_id' => $encabezado_productos_id,
+                ':enviados' => 0,
+                ':por_enviar' => $cantidad
+            ]);
+
         }
 
         // Actualizar el total en la tabla 'notas'
