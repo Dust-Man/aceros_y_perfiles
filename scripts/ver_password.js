@@ -7,7 +7,6 @@ togglePasswordIcon.addEventListener('click', () => {
 
     const inputType = passwordInput.getAttribute('type');
 
-
     if (inputType === 'password') {
         passwordInput.setAttribute('type', 'text');
     } else {

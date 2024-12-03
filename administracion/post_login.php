@@ -24,8 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['nombre_usuario'] = $usuario;
             $_SESSION['rol'] = $user['rol'];
             if ($user['rol'] === 'superusuario') {
-   
-                echo json_encode(['status' => 'success', 'redirect' => '../roles/superusuario.php']);
+
+                echo json_encode(['status' => 'success', 'redirect' => '../../dashboard/']);
             } else {
                 echo json_encode(['status' => 'success', 'redirect' => '../roles/usuario.php']);
 
