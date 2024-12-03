@@ -20,7 +20,7 @@
                 <li><a href="#" data-section="crear-post">Crear Post</a></li>
                 <li><a href="#" data-section="generar-nota">Generar Nota</a></li>
                 <li><a href="#" data-section="generar-envio">Generar Envío</a></li>
-                <li><a href="#" data-section="productos-por-enviar">Productos por Enviar</a></li>
+                <li><a href="#" data-section="envios-proximos">Envíos Próximos</a></li>
                 <li><a href="#" data-section="registrar-cliente">Registrar cliente</a></li>
                 <li><a href="#" data-section="registrar-empleado">Registrar empleado</a></li>
                 <li><a href="#" data-section="registrar-vehiculo">Registrar vehículo</a></li>
@@ -41,127 +41,156 @@
         </div>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-    const menuLinks = document.querySelectorAll('.menu a');
-    const contentDiv = document.querySelector('.main-content');
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuLinks = document.querySelectorAll('.menu a');
+        const contentDiv = document.querySelector('.main-content');
 
-    // Función para cargar secciones dinámicamente
-    const loadSection = (section) => {
-        fetch(`${section}.php`)
-            .then(response => {
-                if (!response.ok) throw new Error('Error al cargar la sección.');
-                return response.text();
-            })
-            .then(html => {
-                contentDiv.innerHTML = html;
+        // Función para cargar secciones dinámicamente
+        const loadSection = (section) => {
+            fetch(`${section}.php`)
+                .then(response => {
+                    if (!response.ok) throw new Error('Error al cargar la sección.');
+                    return response.text();
+                })
+                .then(html => {
+                    contentDiv.innerHTML = html;
 
-                // Reasignar eventos a los elementos dinámicos
-                setupDynamicEvents();
-                assignFormSubmitHandler();
-            })
-            .catch(err => {
-                contentDiv.innerHTML = "<div><h1>Error</h1><p>No se pudo cargar la sección.</p></div>";
-                console.error(err);
-            });
-    };
+                    // Reasignar eventos a los elementos dinámicos
+                    setupDynamicEvents();
+                    assignFormSubmitHandler();
+                    setupCheckboxHandlers(); // Reasignar eventos para los checkboxes
+                })
+                .catch(err => {
+                    contentDiv.innerHTML =
+                        "<div><h1>Error</h1><p>No se pudo cargar la sección.</p></div>";
+                    console.error(err);
+                });
+        };
 
-    // Añadir eventos a los enlaces del menú
-    menuLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault(); // Evita el comportamiento por defecto del enlace
+        // Añadir eventos a los enlaces del menú
+        menuLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Evita el comportamiento por defecto del enlace
 
-            const section = e.target.getAttribute('data-section');
-            if (section) {
-                loadSection(section);
-            }
-        });
-    });
-
-    // Configurar eventos dinámicos para elementos específicos (e.g., productos)
-    const setupDynamicEvents = () => {
-        const agregarProductoBtn = document.getElementById('agregarProducto');
-        const productosContainer = document.getElementById('productosContainer');
-        const productoTemplate = document.getElementById('productoTemplate')?.content;
-
-        if (agregarProductoBtn && productosContainer && productoTemplate) {
-            agregarProductoBtn.addEventListener('click', () => {
-                const nuevoProducto = productoTemplate.cloneNode(true);
-                productosContainer.appendChild(nuevoProducto);
-            });
-
-            productosContainer.addEventListener('click', (e) => {
-                if (e.target.classList.contains('eliminarProducto')) {
-                    e.target.closest('.producto').remove();
+                const section = e.target.getAttribute('data-section');
+                if (section) {
+                    loadSection(section);
                 }
             });
-        }
-    };
+        });
+        const setupCheckboxHandlers = () => {
+            // Selecciona todos los checkboxes y sus campos de entrada asociados
+            const rows = document.querySelectorAll('table tr');
 
-    // Función para manejar el envío del formulario con AJAX
-    const assignFormSubmitHandler = () => {
-        const forms = contentDiv.querySelectorAll('form');
-        forms.forEach(form => {
-            form.addEventListener('submit', (e) => {
-                e.preventDefault(); // Evita la recarga de la página
+            rows.forEach(row => {
+                const checkbox = row.querySelector('.cboxtienda');
+                const cantidadInput = row.querySelector('.cantidad');
 
-                const formData = new FormData(form); // Recoge los datos del formulario
-
-                fetch(form.action, {
-                    method: form.method,
-                    body: formData,
-                })
-                    .then(response => {
-                        if (!response.ok) throw new Error('Error al enviar el formulario.');
-                        return response.text();
-                    })
-                    .then(result => {
-                        // Manejar el resultado después de enviar
-                        contentDiv.innerHTML = ``;
-                        // Reasignar eventos en caso de contenido nuevo
-                        setupDynamicEvents();
-                        assignFormSubmitHandler();
-                    })
-                    .catch(err => {
-                        contentDiv.innerHTML = `<div><h1>Error</h1><p>Hubo un problema al procesar el formulario.</p></div>`;
-                        console.error(err);
+                if (checkbox && cantidadInput) {
+                    checkbox.addEventListener('change', function() {
+                        if (this.checked) {
+                            cantidadInput.disabled = true;
+                            cantidadInput.value = ''; // Limpia el contenido
+                        } else {
+                            cantidadInput.disabled = false;
+                        }
                     });
+                }
             });
-        });
-    };
+        };
 
-    // Manejar clics en los botones de "Gestionar Envío"
-    const setupGestionarEnvioHandler = () => {
-        contentDiv.addEventListener('click', (e) => {
-            if (e.target.classList.contains('cargarFormulario')) {
-                const notaId = e.target.getAttribute('data-nota-id');
+        // Modificar `setupDynamicEvents` para incluir la nueva función
+        const setupDynamicEvents = () => {
+            const agregarProductoBtn = document.getElementById('agregarProducto');
+            const productosContainer = document.getElementById('productosContainer');
+            const productoTemplate = document.getElementById('productoTemplate')?.content;
 
-                // Cargar el formulario dinámicamente
-                fetch(`cargar_formulario_envio.php?nota_id=${notaId}`)
-                    .then(response => {
-                        if (!response.ok) throw new Error('Error al cargar el formulario.');
-                        return response.text();
-                    })
-                    .then(html => {
-                        contentDiv.innerHTML = html;
+            if (agregarProductoBtn && productosContainer && productoTemplate) {
+                agregarProductoBtn.addEventListener('click', () => {
+                    const nuevoProducto = productoTemplate.cloneNode(true);
+                    productosContainer.appendChild(nuevoProducto);
+                });
 
-                        // Asignar eventos al formulario cargado
-                        assignFormSubmitHandler();
-                    })
-                    .catch(err => {
-                        console.error(err);
-                        contentDiv.innerHTML = "<p>Error al cargar el formulario.</p>";
-                    });
+                productosContainer.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('eliminarProducto')) {
+                        e.target.closest('.producto').remove();
+                    }
+                });
             }
-        });
-    };
 
-    // Inicializar eventos
-    setupDynamicEvents();
-    assignFormSubmitHandler();
-    setupGestionarEnvioHandler();
-});
+            // Llamar a la función que maneja los checkboxes dinámicos
+            setupCheckboxHandlers();
+        };
 
+
+        // Función para manejar el envío del formulario con AJAX
+        const assignFormSubmitHandler = () => {
+            const forms = contentDiv.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault(); // Evita la recarga de la página
+
+                    const formData = new FormData(form); // Recoge los datos del formulario
+
+                    fetch(form.action, {
+                            method: form.method,
+                            body: formData,
+                        })
+                        .then(response => {
+                            if (!response.ok) throw new Error(
+                                'Error al enviar el formulario.');
+                            return response.text();
+                        })
+                        .then(result => {
+                            // Manejar el resultado después de enviar
+                            contentDiv.innerHTML = `<p>${result}</p>`;
+                            // Reasignar eventos en caso de contenido nuevo
+                            setupDynamicEvents();
+                            assignFormSubmitHandler();
+                        })
+                        .catch(err => {
+                            contentDiv.innerHTML =
+                                `<div><h1>Error</h1><p>Hubo un problema al procesar el formulario.</p></div>`;
+                            console.error(err);
+                        });
+                });
+            });
+        };
+
+        // Manejar clics en los botones de "Gestionar Envío"
+        const setupGestionarEnvioHandler = () => {
+            contentDiv.addEventListener('click', (e) => {
+                if (e.target.classList.contains('cargarFormulario')) {
+                    const notaId = e.target.getAttribute('data-nota-id');
+
+                    // Cargar el formulario dinámicamente
+                    fetch(`cargar_formulario_envio.php?nota_id=${notaId}`)
+                        .then(response => {
+                            if (!response.ok) throw new Error('Error al cargar el formulario.');
+                            return response.text();
+                        })
+                        .then(html => {
+                            contentDiv.innerHTML = html;
+
+                            // Asignar eventos al formulario cargado
+                            assignFormSubmitHandler();
+                        })
+                        .catch(err => {
+                            console.error(err);
+                            contentDiv.innerHTML = "<p>Error al cargar el formulario.</p>";
+                        });
+                }
+            });
+
+        };
+
+        // Inicializar eventos
+        setupDynamicEvents();
+        assignFormSubmitHandler();
+        setupGestionarEnvioHandler();
+    });
     </script>
+
 </body>
 
 

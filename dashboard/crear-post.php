@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <input type="text" id="title" name="title" required>
 
     <label for="content">Contenido:</label>
-    <textarea id="content" name="content" rows="5" required></textarea>
+    <textarea id="content" name="content" rows="20" required></textarea>
 
     <label for="foto">Banner:</label>
     <input type="file" name="banner" id="banner" accept="image/*">
