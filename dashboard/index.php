@@ -58,7 +58,6 @@
                     // Reasignar eventos a los elementos dinámicos
                     setupDynamicEvents();
                     assignFormSubmitHandler();
-                    setupCheckboxHandlers(); // Reasignar eventos para los checkboxes
                 })
                 .catch(err => {
                     contentDiv.innerHTML =
@@ -78,23 +77,20 @@
                 }
             });
         });
+
+        // Delegación de eventos para checkboxes y sus campos asociados
         const setupCheckboxHandlers = () => {
-            // Selecciona todos los checkboxes y sus campos de entrada asociados
-            const rows = document.querySelectorAll('table tr');
+            contentDiv.addEventListener('change', (e) => {
+                if (e.target && e.target.classList.contains('cboxtienda')) {
+                    const row = e.target.closest('tr'); // Encuentra la fila del checkbox
+                    const cantidadInput = row.querySelector('.cantidad');
 
-            rows.forEach(row => {
-                const checkbox = row.querySelector('.cboxtienda');
-                const cantidadInput = row.querySelector('.cantidad');
-
-                if (checkbox && cantidadInput) {
-                    checkbox.addEventListener('change', function() {
-                        if (this.checked) {
-                            cantidadInput.disabled = true;
-                            cantidadInput.value = ''; // Limpia el contenido
-                        } else {
-                            cantidadInput.disabled = false;
-                        }
-                    });
+                    if (e.target.checked) {
+                        cantidadInput.disabled = true;
+                        cantidadInput.value = ''; // Limpia el contenido
+                    } else {
+                        cantidadInput.disabled = false;
+                    }
                 }
             });
         };
@@ -117,11 +113,7 @@
                     }
                 });
             }
-
-            // Llamar a la función que maneja los checkboxes dinámicos
-            setupCheckboxHandlers();
         };
-
 
         // Función para manejar el envío del formulario con AJAX
         const assignFormSubmitHandler = () => {
@@ -147,6 +139,7 @@
                             // Reasignar eventos en caso de contenido nuevo
                             setupDynamicEvents();
                             assignFormSubmitHandler();
+                            setupCheckboxHandlers();
                         })
                         .catch(err => {
                             contentDiv.innerHTML =
@@ -174,6 +167,7 @@
 
                             // Asignar eventos al formulario cargado
                             assignFormSubmitHandler();
+                            setupCheckboxHandlers();
                         })
                         .catch(err => {
                             console.error(err);
@@ -181,15 +175,16 @@
                         });
                 }
             });
-
         };
 
         // Inicializar eventos
         setupDynamicEvents();
         assignFormSubmitHandler();
+        setupCheckboxHandlers(); // Iniciar la lógica para checkboxes
         setupGestionarEnvioHandler();
     });
-    </script>
+</script>
+
 
 </body>
 
