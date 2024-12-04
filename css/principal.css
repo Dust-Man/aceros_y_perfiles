@@ -200,41 +200,7 @@ nav a {
 .--sucursal-sur-oriente {
   background-image: url("../img/sucursales/sur-oriente.png");
 }
-/*BOTONES*/
-.boton-accion {
-  color: var(--color-claro);
-  background-color: transparent;
-  border: solid 1px var(--color-claro);
-  padding: 15px 60px;
-  border-radius: 100vh;
-  font-size: 20px;
-  text-transform: uppercase;
-  text-decoration: none;
-  display: block;
-}
-.--accion-secundario {
-  border: solid 1px var(--color-secundario);
-  color: var(--color-secundario);
-}
-.boton-envio {
-  color: var(--color-claro);
-  background-color: transparent;
-  border: solid 1px var(--color-claro);
-  padding: 10px 30px;
-  border-radius: 100vh;
-  text-transform: uppercase;
-  text-decoration: none;
-  display: block;
-  cursor: pointer;
-}
-.asubbold {
-  font-weight: bold;
-  text-decoration: underline;
-  color: var(--color-claro);
-  text-transform: uppercase;
-  font-size: 30px;
-  text-align: center;
-}
+
 /*MODIFICADORES GENERALES*/
 .--upper {
   text-transform: uppercase;
@@ -829,4 +795,83 @@ input:not(:placeholder-shown) ~ .reset {
 }
 #clientes {
     margin-top: 50px; /* Ajusta el valor según sea necesario */
+}
+
+
+
+
+/*//////////////////////////////////////////////////////////////// BOTONES ///////////////////////////////////////////////////////*/
+
+
+.boton-accion {
+  color: var(--color-claro);
+  background-color: transparent;
+  border: solid 1px var(--color-claro);
+  padding: 15px 60px;
+  border-radius: 100vh;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: block;
+  transition: all 800ms cubic-bezier(0.4, 0, 0.2, 1); /* Transición suavizada */
+  outline: 3px white solid;
+  outline-offset: -3px;
+}
+
+.--accion-secundario {
+  border: solid 1px var(--color-secundario);
+  color: var(--color-secundario);
+  transition: all 800ms cubic-bezier(0.4, 0, 0.2, 1); /* Transición suavizada */
+  outline: 3px red solid;
+  outline-offset: -3px;
+}
+
+.boton-envio {
+  color: var(--color-claro);
+  background-color: transparent;
+  border: solid 1px var(--color-claro);
+  padding: 10px 30px;
+  border-radius: 100vh;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  transition: all 800ms cubic-bezier(0.4, 0, 0.2, 1); /* Transición suavizada */
+  outline: 3px white solid;
+  outline-offset: -3px;
+}
+
+/* Opcional: hover effects */
+.boton-accion:hover, .boton-envio:hover {
+  background-color: var(--color-claro);
+  color: var(--color-oscuro);
+  border-color: var(--color-oscuro);
+  transition: all 800ms cubic-bezier(0.4, 0, 0.2, 1); /* Transición suavizada */
+  outline: 3px white solid;
+  outline-offset: -3px;
+}
+
+
+.--accion-secundario:hover {
+  background-color: var(--color-secundario);
+  color: var(--color-claro);
+  transition: all 800ms cubic-bezier(0.4, 0, 0.2, 1); /* Transición suavizada */
+  outline: 3px red solid;
+  outline-offset: -3px;
+}
+
+
+
+
+
+
+.asubbold {
+  font-weight: bold;
+  text-decoration: underline;
+  color: var(--color-claro);
+  text-transform: uppercase;
+  font-size: 30px;
+  text-align: center;
+  transition: all 800ms cubic-bezier(0.4, 0, 0.2, 1); /* Transición suavizada */
+  
 }

@@ -52,7 +52,8 @@
         <!-- Sección Sucursales -->
         <section id="sucursales" class="reveal">
             <div class="caption-sucursales">
-                <a href="" class="boton-accion --accion-secundario --bold reveal">Conoce nuestras sucursales</a>
+       <a href="sucursales.php" class="boton-accion --accion-secundario --bold reveal">Conoce nuestras sucursales</a>
+                
             </div>
             <div class="contenedor-imagen-sucursales">
                 <img class="imagen-sucursales" src="./img/sucursalazulejos.png" alt="Baños y azulejos Arciniega">
