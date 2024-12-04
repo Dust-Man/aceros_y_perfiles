@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $fecha = $_POST['fecha'];
         $empleado_id = $_POST['empleado_id'];
         $ruta = $_POST['ruta'];
+        $activo = isset($_POST['tienda']) ? true : false;
 
         $sqlEnvio = "INSERT INTO envios (nota_id, vehiculo_id, hora, fecha_envio,empleado_id, ruta)
                         VALUES (:nota_id, :vehiculo_id, :hora, :fecha_envio,:empleado_id, :ruta)";
@@ -96,6 +97,7 @@ if (isset($_GET['nota_id'])) {
 <h3>Gestionar Envío para Nota <?= $nota_id ?></h3>
 <p>Cliente: <?= htmlspecialchars($cliente['nombre']) ?></p>
 <form id="formEnvio" action="cargar_formulario_envio.php?nota_id=<?= $nota_id ?>" method="POST">
+
     <input type="hidden" name="nota_id" value="<?= $nota_id ?>">
     <label for="vehiculo_id">Vehículo:</label>
     <select name="vehiculo_id" id="vehiculo_id" required>
@@ -138,26 +140,41 @@ if (isset($_GET['nota_id'])) {
     <input type="time" name="hora" id="hora" required>
 
     <div class="table-container">
-        <table>
-            <tr>
-                <th>Producto</th>
-                <th>Por Enviar</th>
-                <th>Enviar</th>
-            </tr>
-            <?php
-            $consulta = "SELECT * FROM productos_en_prod_env WHERE id_nota = '$nota_id' AND por_enviar > 0";
-            $resultado = mysqli_query($conexion, $consulta);
+    <table>
+    <tr>
+        <th>Producto</th>
+        <th>Por Enviar</th>
+        <th>Enviar</th>
+        <th>Se recoge en tienda</th>
+    </tr>
+    <?php
+    $consulta = "SELECT * FROM productos_en_prod_env WHERE id_nota = '$nota_id' AND por_enviar > 0";
+    $resultado = mysqli_query($conexion, $consulta);
 
-            if ($resultado->num_rows > 0) {
-                while ($fila = $resultado->fetch_assoc()) {
-                    echo "<tr><td>" . $fila['nombre'] . "</td><td>" . $fila['por_enviar'];
-                    echo "<td> <input type='hidden' name='producto_id[]' value='" . $fila['producto_id'] . "'>";
-                    echo "<input type='hidden' name='id_prod_env[]' value='" . $fila['id_productos_enviar'] . "'>";
-                    echo "<input type='number' min= '0' name='cantidad[]'> </td></tr> ";
-                }
-            }
-            ?>
-        </table>
+    if ($resultado->num_rows > 0) {
+        while ($fila = $resultado->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . $fila['nombre'] . "</td>";
+            echo "<td>" . $fila['por_enviar'] . "</td>";
+            echo "<td>";
+            echo "<input type='hidden' name='producto_id[]' value='" . $fila['producto_id'] . "'>";
+            echo "<input type='hidden' name='id_prod_env[]' value='" . $fila['id_productos_enviar'] . "'>";
+            echo "<input type='number' min='0' name='cantidad[]' class='cantidad'>";
+            echo "</td>";
+            echo "<td>";
+            echo "<input type='checkbox' name='cboxtienda[]' class='cboxtienda'>";
+            echo "</td>";
+            echo "</tr>";
+        }
+    }
+    ?>
+</table>
+
+
+
+
+
+       
     </div>
 
     <button type="submit">Guardar Envío</button>
