@@ -29,6 +29,7 @@
             <li><a href="sucursales.php">Sucursales</a></li>
             <li><a href="contacto.php">Contacto</a></li>
             <li><a href="noticias.php">Noticias</a></li>
+            <li><a href="faq.php">Eventos</a></li>
             <li><a href="faq.php">Preguntas Frecuentes</a></li>
         </ul>
     </nav>

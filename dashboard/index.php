@@ -182,7 +182,6 @@
         // Inicializar eventos
         setupDynamicEvents();
         assignFormSubmitHandler();
-        setupCheckboxHandlers(); // Iniciar la lógica para checkboxes
         setupGestionarEnvioHandler();
     });
 </script>

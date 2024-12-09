@@ -80,7 +80,7 @@ nav a {
 
 .layout1,
 .layout2,
-.layout3 {
+.layout3,.full-layout {
   width: 100%;
   min-height: 100vh;
   background-size: cover;
@@ -115,10 +115,14 @@ nav a {
   align-items: flex-start;
 }
 /*LAYOUT 2: Imagen de fondo con un grid de dos columnas*/
-.layout2 {
+.layout2, .layout2-height-auto {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
+}
+.layout2-height-auto{
+  padding: 20px;
+  align-items: center;
 }
 .layout2 > div {
   display: flex;
@@ -146,9 +150,19 @@ nav a {
   font-size: 20px;
 }
 /*LAYOUT 3: Pantalla completa con un grid de tres columnas */
-.layout3 {
+.layout3,.layout3-height-auto ,.layout3-height-70vh{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+.layout3-height-70vh{
+  min-height: 70vh;
+  justify-content: center;
+  align-items: center;
+}
+.layout3-height-auto{
+  width: 100%;
+  padding: 30px;
+  margin-bottom: 60px;
 }
 .layout3 > div {
   width: 100%;
@@ -158,9 +172,81 @@ nav a {
   flex-direction: column;
 }
 .--l390vh {
-  height: 90vh;
+  margin-top: -80px;
+  height: 60vh !important;
 }
 
+/*FULL LAYOUT */
+.full-layout{
+  width: 100%;
+  height: 100%;
+}
+.layout4{
+  margin: 0 auto;
+  width: 100%;
+  padding: 10px;
+  padding-top: 120px;
+  text-align: center;
+}
+.--align-content-space-between{
+  align-content: space-between;
+}
+.dos-columnas-flex{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  margin-top: -70px;
+  margin-bottom: 40px;
+}
+.dos-columnas-flex div{
+  flex: 1;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+}
+.dos-columnas-flex--texto{
+  padding: 40px;
+  font-size: 1.25em;
+}
+.image-container{
+  height: 500px;
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+.img-lay3{
+  width: 100%;
+  max-width: 300px;
+}
+.img-lay3200px{
+  width: 100%;
+  max-width: 200px;
+}
+.img-lay3-container{
+  text-align: center;
+  width: 100%;
+}
+.image-container img{
+  border-radius: 10px;
+  width: 100%;
+  margin: 0 auto;
+}
+.descripcionsg{
+  font-size: 20px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.lista-q-ofrecemos{
+  list-style-position: inside;
+}
+.lista-q-ofrecemos li{
+  margin-bottom: 10px;
+}
 /*FONDOS*/
 .--imagen-cemento-c-azul {
   background-image: url("../img/fondos/cemento-cruz-azul.png");
@@ -169,6 +255,13 @@ nav a {
     background-repeat: no-repeat;
     background-attachment: fixed; /* Esto mantiene la imagen fija */
   
+}
+.--imagen-cemento{
+  background-image: url("../img/fondos/cemento.png");
+  background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
 }
 .--imagen-constructores {
   background-image: url("../img/fondos/constructores.png");
@@ -200,7 +293,11 @@ nav a {
 .--sucursal-sur-oriente {
   background-image: url("../img/sucursales/sur-oriente.png");
 }
-
+.img-eligenos{
+  width: 100%;
+  height: 500px;
+  border-radius: 10px;
+}
 /*MODIFICADORES GENERALES*/
 .--upper {
   text-transform: uppercase;
@@ -227,6 +324,9 @@ nav a {
 .--color-light {
   color: #fff;
 }
+.--color-darker{
+  color: #5e5d5d ;
+}
 .--color-principal{
   color: var(--color-principal);
 }
@@ -241,10 +341,99 @@ nav a {
   text-align: center;
   width: 100%;
 }
+.subtitle{
+  font-size:xx-large;
+  text-align: center;
+}
 
 .title-caption {
   font-size: 20px;
 }
+.titulosg{
+  margin-bottom: 15px;
+}
+/*CARRUSEL*/
+#portafolio{
+  height: 70vh;
+  display: grid;
+  place-items: center;
+}
+#slider-container{
+  height: 300px;
+  width: 85vw;
+  max-width: 1400px;
+  position: relative;
+  overflow: hidden;
+  padding:20px ;
+}
+#slider-container .btn{
+  position: absolute;
+  top: calc(50% - 30px);
+  height: 15px;
+  width: 15px;
+  border-left: 8px solid #0e8abb;
+  border-top: 8px solid #0e8abb;
+  cursor: pointer;
+}
+#slider-container .btn:hover{
+  transform: scale(1.2);
+}
+#slider-container .btn.inactive{
+  border-color: #282828;
+}
+#slider-container .btn:first-of-type{
+  transform: rotate(-45deg);
+  left: 10px;
+}
+#slider-container .btn:last-of-type{
+  transform: rotate(135deg);
+  right: 10px;
+}
+#slider-container #slider{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: all .5s;
+}
+#slider-container #slider .slide{
+  height: 90%;
+  margin: auto 10px;
+  background-color: #b5b5b5;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px 2px white, -2px -2px 4px 2px white;
+  display: grid ;
+  place-items: center;
+}
+#slider-container #slider .slide span{
+  color: white;
+  font-size: 60px;
+}
+@media only screen and (min-width: 1100px){
+  #slider-container #slider .slide{
+    width: calc(2.5% -20px);
+  }
+}
+@media only screen and (max-width: 1100px){
+  #slider-container #slider .slide{
+    width: calc(3.3333333% -20px);
+  }
+}
+@media only screen and (max-width: 900px){
+  #slider-container #slider .slide{
+    width: calc(5%-20px);
+  }
+}
+
+/* @media only screen and (max-width: 900px){
+  #slider-container #slider .slide{
+    width: calc(5% - 20px)
+  }
+}
+@media only screen and (max-width: 550px){
+  #slider-container #slider .slide{
+    width: calc(10% - 20px);
+  }
+} */
 /*LANDING PAGE */
 
 /*#sucursales*/
@@ -410,13 +599,80 @@ nav a {
   border-radius: 20px;
   border: none;
 }
+.--street-view iframe{
+  height: 60vh;
+}
+
+/*CARRUSEL */
+.carousel {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+}
+
+.carousel-item {
+  display: none;
+  width: 80%;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item .carousel-caption {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.carrusel-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  margin: 0 1rem;
+  font-size: 1.5rem;
+}
+
+.carrusel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+      width: 90%;
+  }
+}
+
 /*RESPONSIVIDAD*/
 @media screen and (max-width: 767px) {
   .layout2,
-  .layout3 {
-    grid-template-columns: 1fr;
+  .layout3,.layout3-height-70vh,.layout2-height-auto ,.layout3-height-auto{
+    grid-template-columns: 1fr !important;
     min-height: 100vh;
-    height: unset;
+    height: unset !important;
+  }
+  .layout3-height-70vh > section {
+    min-height: fit-content;
   }
   .servicio-aceros,
   .servicio-azulejos,
@@ -439,6 +695,9 @@ nav a {
   }
   #experiencia {
     padding: 10px;
+  }
+  .dos-columnas-flex{
+    flex-direction: column;
   }
 }
 

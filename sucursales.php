@@ -28,7 +28,7 @@
                         la más alta calidad a precios competitivos. Todo lo que necesitas para que tu proyecto sea un
                         éxito está aquí. Haz clic en "Ir" para descubrir más sobre esta sucursal.</p>
                 </div>
-                <a href="" class="boton-accion">Ir</a>
+                <a href="sucursal-matriz.php" class="boton-accion">Ir</a>
             </div>
 
             <div class="map-container reveal">
@@ -49,7 +49,7 @@
                         construcción hasta aceros y perfiles de alta calidad. Haz clic en "Ir" para descubrir más sobre
                         esta sucursal.</p>
                 </div>
-                <a href="" class="boton-accion">Ir</a>
+                <a href="sucursal-sur-oriente.php" class="boton-accion">Ir</a>
             </div>
 
             <div class="map-container reveal">
@@ -69,7 +69,7 @@
                         y artículos para baños, con diseños modernos y materiales de alta calidad para tus espacios. Haz
                         clic en "Ir" para conocer más sobre esta sucursal.</p>
                 </div>
-                <a href="" class="boton-accion">Ir</a>
+                <a href="sucursal-banos-azulejos.php" class="boton-accion">Ir</a>
             </div>
 
             <div class="map-container reveal">

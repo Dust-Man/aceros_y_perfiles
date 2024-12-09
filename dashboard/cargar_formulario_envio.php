@@ -145,8 +145,6 @@ if (isset($_GET['nota_id'])) {
         <th>Producto</th>
         <th>Por Enviar</th>
         <th>Enviar</th>
-        <th>Se recoge en tienda</th>
-    </tr>
     <?php
     $consulta = "SELECT * FROM productos_en_prod_env WHERE id_nota = '$nota_id' AND por_enviar > 0";
     $resultado = mysqli_query($conexion, $consulta);
@@ -160,9 +158,6 @@ if (isset($_GET['nota_id'])) {
             echo "<input type='hidden' name='producto_id[]' value='" . $fila['producto_id'] . "'>";
             echo "<input type='hidden' name='id_prod_env[]' value='" . $fila['id_productos_enviar'] . "'>";
             echo "<input type='number' min='0' name='cantidad[]' class='cantidad'>";
-            echo "</td>";
-            echo "<td>";
-            echo "<input type='checkbox' name='cboxtienda[]' class='cboxtienda'>";
             echo "</td>";
             echo "</tr>";
         }
