@@ -801,8 +801,6 @@ input:not(:placeholder-shown) ~ .reset {
 
 
 /*//////////////////////////////////////////////////////////////// BOTONES ///////////////////////////////////////////////////////*/
-
-
 .boton-accion {
   color: var(--color-claro);
   background-color: transparent;
@@ -813,7 +811,7 @@ input:not(:placeholder-shown) ~ .reset {
   text-transform: uppercase;
   text-decoration: none;
   display: block;
-  transition: all 800ms cubic-bezier(0.4, 0, 0.2, 1); /* Transición suavizada */
+  transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1); 
   outline: 3px white solid;
   outline-offset: -3px;
 }
@@ -821,7 +819,7 @@ input:not(:placeholder-shown) ~ .reset {
 .--accion-secundario {
   border: solid 1px var(--color-secundario);
   color: var(--color-secundario);
-  transition: all 800ms cubic-bezier(0.4, 0, 0.2, 1); /* Transición suavizada */
+  transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1); 
   outline: 3px red solid;
   outline-offset: -3px;
 }
@@ -836,7 +834,7 @@ input:not(:placeholder-shown) ~ .reset {
   text-decoration: none;
   display: block;
   cursor: pointer;
-  transition: all 800ms cubic-bezier(0.4, 0, 0.2, 1); /* Transición suavizada */
+  transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1); 
   outline: 3px white solid;
   outline-offset: -3px;
 }
@@ -846,22 +844,18 @@ input:not(:placeholder-shown) ~ .reset {
   background-color: var(--color-claro);
   color: var(--color-oscuro);
   border-color: var(--color-oscuro);
-  transition: all 800ms cubic-bezier(0.4, 0, 0.2, 1); /* Transición suavizada */
+  transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1); 
   outline: 3px white solid;
   outline-offset: -3px;
 }
 
-
 .--accion-secundario:hover {
   background-color: var(--color-secundario);
   color: var(--color-claro);
-  transition: all 800ms cubic-bezier(0.4, 0, 0.2, 1); /* Transición suavizada */
+  transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1); 
   outline: 3px red solid;
   outline-offset: -3px;
 }
-
-
-
 
 
 
@@ -874,4 +868,4 @@ input:not(:placeholder-shown) ~ .reset {
   text-align: center;
   transition: all 800ms cubic-bezier(0.4, 0, 0.2, 1); /* Transición suavizada */
   
-}
+}  
