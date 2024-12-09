@@ -201,6 +201,24 @@ nav a {
   background-image: url("../img/sucursales/sur-oriente.png");
 }
 
+
+.--imagen-rifa{
+  background-image: url("../img/fondos/rifa.jpg");
+}
+
+.--imagen-ladrillos{
+  background-image: url("../img/fondos/arqui.jpg");
+}
+
+.--imagen-gris{
+  background-image: url("../img/fondos/fondo-gris.jpg");
+}
+
+.--imagen-lugar{
+  background-image: url("../img/fondos/azulejos-banos.jpg");
+}
+
+
 /*MODIFICADORES GENERALES*/
 .--upper {
   text-transform: uppercase;
