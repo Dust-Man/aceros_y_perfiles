@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="./css/principal.css">
    
 </head>
+<style>
+.reveal {
 
+  transition: opacity 1.5s ease-out, transform 0.5s ease-out; /* Transición suave */
+}
+</style>
 <body>
     <?php include "header.php"; ?>
 
@@ -17,6 +22,7 @@
             <h1 class="l1__title reveal">SUCURSALES</h1>
             <p class="l1__caption --upper --mbottom60 reveal">Todas nuestras sucursales para ti</p>
         </div>
+        
 
         <section id="experiencia-ubicaciones" class="layout2 --sucursal-matriz">
             <div class="reveal">
@@ -55,7 +61,7 @@
             <div class="map-container reveal">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.6108593564586!2d-99.56587082494951!3d19.94079678145002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d249c89859a627%3A0x9c840fc353883b14!2sAceros%                y%20Perfiles%20Arciniega!5e0!3m2!1ses-419!2smx!4v1731590916835!5m2!1ses-419!2smx"
-                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    allowfullscreen=""  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
 
@@ -63,7 +69,7 @@
             <div class="reveal">
                 <p class="texto-medio-grande --no-mbottom">
                     <span class="texto-medio">Azulejos y Baños Arciniega</span>
-                </p>
+                </p> 
                 <div class="contenedor-de-texto --mbottom30">
                     <p>Ubicados en Avenida Vicente Guerrero, en Jilotepec, esta sucursal te ofrece lo mejor en azulejos
                         y artículos para baños, con diseños modernos y materiales de alta calidad para tus espacios. Haz
