@@ -12,6 +12,8 @@
 
     <?php
     include "./side_bar.php";
+    include "./autentificacion.php";
+
     ?>
 
 
