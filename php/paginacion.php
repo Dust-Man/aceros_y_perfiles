@@ -16,7 +16,7 @@ if (!empty($busqueda)) {
     }
 }
 
-$sql = "SELECT DISTINCT * FROM productos 
+$sql = "SELECT DISTINCT * FROM productos_mostrar 
         $filtroBusqueda 
         ORDER BY producto_id ASC 
         LIMIT $inicio, $elementosPorPagina";
@@ -39,7 +39,7 @@ usort($productos, function($a, $b) {
     return $a['distancia'] - $b['distancia'];
 });
 
-$sqlTotal = "SELECT COUNT(DISTINCT producto_id) as total FROM productos $filtroBusqueda";
+$sqlTotal = "SELECT COUNT(DISTINCT producto_id) as total FROM productos_mostrar $filtroBusqueda";
 $resultTotal = mysqli_query($conexion, $sqlTotal);
 
 if (!$resultTotal) {

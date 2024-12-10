@@ -1,4 +1,28 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<?php 
+
+include "./side_bar.php";
+
+?>
+
+
+
+    
+</body>
+</html>
+   <!-- Main Content -->
+   <div class="main-content">
+            <div class="content">
+
+            <?php
 include '../php/conexion.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -28,8 +52,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 
-<h1>Crear Nuevo Post</h1>
 <form action="crear-post.php" method="POST" enctype="multipart/form-data">
+<h1>Crear Nuevo Post</h1>
+
     <label for="title">Título:</label>
     <input type="text" id="title" name="title" required>
 
@@ -41,3 +66,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <button type="submit">Guardar</button>
 </form>
+
+            </div>
+        </div>
+    </div>
+

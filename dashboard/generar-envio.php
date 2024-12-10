@@ -1,4 +1,19 @@
-<?php 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<?php
+include "./side_bar.php";
+?>
+   <!-- Main Content -->
+   <div class="main-content">
+            <div class="content">
+            <?php 
 include '../php/conexion.php';
 ?>
 <div class="content">
@@ -29,4 +44,11 @@ if ($resultado->num_rows > 0) {
     echo "<p>No hay notas pendientes con productos por enviar.</p>";
 }
 ?>
-</div>
+</div>          
+            </div>
+        </div>
+    </div>
+</body>
+<script defer src="./gestionar_envios.js"></script>
+
+</html>

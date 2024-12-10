@@ -96,7 +96,7 @@ if (isset($_GET['nota_id'])) {
 
 <h3>Gestionar Envío para Nota <?= $nota_id ?></h3>
 <p>Cliente: <?= htmlspecialchars($cliente['nombre']) ?></p>
-<form id="formEnvio" action="cargar_formulario_envio.php?nota_id=<?= $nota_id ?>" method="POST">
+<form id="formEnvio"  method="POST">
 
     <input type="hidden" name="nota_id" value="<?= $nota_id ?>">
     <label for="vehiculo_id">Vehículo:</label>
@@ -145,8 +145,6 @@ if (isset($_GET['nota_id'])) {
         <th>Producto</th>
         <th>Por Enviar</th>
         <th>Enviar</th>
-        <th>Se recoge en tienda</th>
-    </tr>
     <?php
     $consulta = "SELECT * FROM productos_en_prod_env WHERE id_nota = '$nota_id' AND por_enviar > 0";
     $resultado = mysqli_query($conexion, $consulta);
@@ -161,21 +159,14 @@ if (isset($_GET['nota_id'])) {
             echo "<input type='hidden' name='id_prod_env[]' value='" . $fila['id_productos_enviar'] . "'>";
             echo "<input type='number' min='0' name='cantidad[]' class='cantidad'>";
             echo "</td>";
-            echo "<td>";
-            echo "<input type='checkbox' name='cboxtienda[]' class='cboxtienda'>";
-            echo "</td>";
             echo "</tr>";
         }
     }
     ?>
 </table>
-
-
-
-
-
        
     </div>
 
     <button type="submit">Guardar Envío</button>
 </form>
+<script src="./envio.js"></script>
