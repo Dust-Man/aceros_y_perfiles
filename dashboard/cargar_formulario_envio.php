@@ -96,7 +96,7 @@ if (isset($_GET['nota_id'])) {
 
 <h3>Gestionar Envío para Nota <?= $nota_id ?></h3>
 <p>Cliente: <?= htmlspecialchars($cliente['nombre']) ?></p>
-<form id="formEnvio" action="cargar_formulario_envio.php?nota_id=<?= $nota_id ?>" method="POST">
+<form id="formEnvio"  method="POST">
 
     <input type="hidden" name="nota_id" value="<?= $nota_id ?>">
     <label for="vehiculo_id">Vehículo:</label>
@@ -164,13 +164,9 @@ if (isset($_GET['nota_id'])) {
     }
     ?>
 </table>
-
-
-
-
-
        
     </div>
 
     <button type="submit">Guardar Envío</button>
 </form>
+<script src="./envio.js" defer></script>

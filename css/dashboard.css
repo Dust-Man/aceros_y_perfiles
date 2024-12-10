@@ -15,7 +15,7 @@ h1{
 }
 .dashboard{
     display: flex;
-    grid-templte-columns: 1fr 1fr;
+    grid-templte-columns: 1fr 1fr ;
     height: 100vh;
 }
 
@@ -146,6 +146,7 @@ form input[type="file"],
 form input[type="number"],
 form input[type="date"],
 form input[type="time"],
+form input[type="search"],
 form select,
 form textarea {
     width: 100%;
@@ -214,8 +215,8 @@ form .table-container {
 }
 
 /* Estilo general de la tabla */
-form table {
-    width: 100%;
+ .table {
+    width: 85%;
     border-collapse: collapse;
     margin: 0;
     font-size: 1rem;
@@ -223,7 +224,7 @@ form table {
 }
 
 /* Encabezado de la tabla */
-form th {
+.table th {
     background: #0073aa;
     color: #fff;
     text-align: left;
@@ -233,7 +234,7 @@ form th {
 }
 
 /* Celdas de la tabla */
-form td {
+.table td {
     padding: 10px;
     border: 1px solid #ddd;
     text-align: left;
@@ -242,19 +243,19 @@ form td {
 }
 
 /* Alternar color de filas */
-form tr:nth-child(even) td {
+.table  tr:nth-child(even) td {
     background: #f4f4f9;
 }
 
 /* Hover en filas */
-form tr:hover td {
+.table tr:hover td {
     background: #e8f6ff;
 }
 
 /* Celdas editables o de entrada */
-form td input[type="text"],
-form td select,
-form td textarea {
+.table td input[type="text"],
+.table select,
+.table td textarea {
     width: 100%;
     padding: 8px;
     border: 1px solid #ddd;
@@ -266,7 +267,7 @@ form td textarea {
 }
 
 /* Botones dentro de la tabla */
-form td button {
+.table td button {
     background: #0073aa;
     color: #fff;
     padding: 5px 10px;
@@ -277,7 +278,35 @@ form td button {
     transition: background 0.3s;
 }
 
-form td button:hover {
+.table td button:hover {
     background: #005f8a;
 }
+/*Paginacion */
+.paginacion {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .paginacion a {
+    margin: 0 5px;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .paginacion a:hover {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .paginacion a.activo {
+    background-color: #000;
+    color: #fff;
+  }
+  
 
