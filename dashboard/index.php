@@ -27,6 +27,156 @@
             </div>
         </div>
     </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuLinks = document.querySelectorAll('.menu a');
+        const contentDiv = document.querySelector('.main-content');
+
+        // Función para cargar secciones dinámicamente
+        const loadSection = (section) => {
+            fetch(`${section}.php`)
+                .then(response => {
+                    if (!response.ok) throw new Error('Error al cargar la sección.');
+                    return response.text();
+                })
+                .then(html => {
+                    contentDiv.innerHTML = html;
+
+                    // Reasignar eventos a los elementos dinámicos
+                    setupDynamicEvents();
+                    assignFormSubmitHandler();
+                    setupCheckboxHandlers(); // Reasignar eventos para los checkboxes
+                })
+                .catch(err => {
+                    contentDiv.innerHTML =
+                        "<div><h1>Error</h1><p>No se pudo cargar la sección.</p></div>";
+                    console.error(err);
+                });
+        };
+
+        // Añadir eventos a los enlaces del menú
+        menuLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Evita el comportamiento por defecto del enlace
+
+                const section = e.target.getAttribute('data-section');
+                if (section) {
+                    loadSection(section);
+                }
+            });
+        });
+        const setupCheckboxHandlers = () => {
+            // Selecciona todos los checkboxes y sus campos de entrada asociados
+            const rows = document.querySelectorAll('table tr');
+
+            rows.forEach(row => {
+                const checkbox = row.querySelector('.cboxtienda');
+                const cantidadInput = row.querySelector('.cantidad');
+
+                if (checkbox && cantidadInput) {
+                    checkbox.addEventListener('change', function() {
+                        if (this.checked) {
+                            cantidadInput.disabled = true;
+                            cantidadInput.value = ''; // Limpia el contenido
+                        } else {
+                            cantidadInput.disabled = false;
+                        }
+                    });
+                }
+            });
+        };
+
+        // Modificar `setupDynamicEvents` para incluir la nueva función
+        const setupDynamicEvents = () => {
+            const agregarProductoBtn = document.getElementById('agregarProducto');
+            const productosContainer = document.getElementById('productosContainer');
+            const productoTemplate = document.getElementById('productoTemplate')?.content;
+
+            if (agregarProductoBtn && productosContainer && productoTemplate) {
+                agregarProductoBtn.addEventListener('click', () => {
+                    const nuevoProducto = productoTemplate.cloneNode(true);
+                    productosContainer.appendChild(nuevoProducto);
+                });
+
+                productosContainer.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('eliminarProducto')) {
+                        e.target.closest('.producto').remove();
+                    }
+                });
+            }
+
+            // Llamar a la función que maneja los checkboxes dinámicos
+            setupCheckboxHandlers();
+        };
+
+
+        // Función para manejar el envío del formulario con AJAX
+        const assignFormSubmitHandler = () => {
+            const forms = contentDiv.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault(); // Evita la recarga de la página
+
+                    const formData = new FormData(form); // Recoge los datos del formulario
+
+                    fetch(form.action, {
+                            method: form.method,
+                            body: formData,
+                        })
+                        .then(response => {
+                            if (!response.ok) throw new Error(
+                                'Error al enviar el formulario.');
+                            return response.text();
+                        })
+                        .then(result => {
+                            // Manejar el resultado después de enviar
+                            contentDiv.innerHTML = `<p>${result}</p>`;
+                            // Reasignar eventos en caso de contenido nuevo
+                            setupDynamicEvents();
+                            assignFormSubmitHandler();
+                        })
+                        .catch(err => {
+                            contentDiv.innerHTML =
+                                `<div><h1>Error</h1><p>Hubo un problema al procesar el formulario.</p></div>`;
+                            console.error(err);
+                        });
+                });
+            });
+        };
+
+        // Manejar clics en los botones de "Gestionar Envío"
+        const setupGestionarEnvioHandler = () => {
+            contentDiv.addEventListener('click', (e) => {
+                if (e.target.classList.contains('cargarFormulario')) {
+                    const notaId = e.target.getAttribute('data-nota-id');
+
+                    // Cargar el formulario dinámicamente
+                    fetch(`cargar_formulario_envio.php?nota_id=${notaId}`)
+                        .then(response => {
+                            if (!response.ok) throw new Error('Error al cargar el formulario.');
+                            return response.text();
+                        })
+                        .then(html => {
+                            contentDiv.innerHTML = html;
+
+                            // Asignar eventos al formulario cargado
+                            assignFormSubmitHandler();
+                        })
+                        .catch(err => {
+                            console.error(err);
+                            contentDiv.innerHTML = "<p>Error al cargar el formulario.</p>";
+                        });
+                }
+            });
+
+        };
+
+        // Inicializar eventos
+        setupDynamicEvents();
+        assignFormSubmitHandler();
+        setupGestionarEnvioHandler();
+    });
+    </script>
 
 
 </body>

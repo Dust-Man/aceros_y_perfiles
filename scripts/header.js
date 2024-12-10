@@ -35,8 +35,6 @@ cerrar.addEventListener("click", () => {
     abrir.style.display = "block";  // Mostrar el botón de abrir
 });
 
-
-
 ///////////////////////////////////////////////////////////////////////////animaciones///////////////////////////////////////////////
 
 // Función para revelar elementos al hacer scroll
@@ -60,3 +58,38 @@ window.addEventListener('scroll', revealOnScroll);
 
 // Ejecutar la función al cargar la página para verificar elementos visibles
 window.onload = revealOnScroll;
+
+// Desplazamiento suave hacia la sección de contacto
+document.addEventListener("DOMContentLoaded", function() {
+    const botonContacto = document.querySelector('.boton-accion'); // Selecciona el botón "Contáctanos"
+    
+    botonContacto.addEventListener('click', function(event) {
+        event.preventDefault(); // Evita el comportamiento por defecto del enlace
+        const targetId = this.getAttribute('href'); // Obtiene el ID del destino
+        const targetElement = document.querySelector(targetId); // Selecciona el elemento destino
+
+        // Desplazamiento suave personalizado
+        const startPosition = window.pageYOffset;
+        const targetPosition = targetElement.getBoundingClientRect().top + startPosition;
+        const distance = targetPosition - startPosition;
+        const duration = 1500; // Duración en milisegundos (1.5 segundos)
+        let start = null;
+
+        function animation(currentTime) {
+            if (start === null) start = currentTime;
+            const timeElapsed = currentTime - start;
+            const run = ease(timeElapsed, startPosition, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+
+        function ease(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+
+        requestAnimationFrame(animation);
+    });
+});

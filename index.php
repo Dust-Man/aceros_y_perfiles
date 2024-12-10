@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aceros y Perfiles Arciniega</title>
     <link rel="stylesheet" href="./css/principal.css">
+   
     <link rel="icon" href="./img/logos/logo.png" type="image/png">
 </head>
 
@@ -15,7 +16,7 @@
     <main>
         <!-- Sección Hero -->
         <section id="hero" class="layout1 --imagen-cemento-c-azul">
-            <h1 class="l1__title rise-text reveal">ACEROS Y PERFILES <br> ARCINIEGA</h1>
+            <h1 class="l1__title rise-text reveal ">ACEROS Y PERFILES <br> ARCINIEGA</h1>
             <p class="l1__caption --upper --mbottom60 reveal">Materiales de calidad para tu proyecto</p>
             <a href="#contacto" class="boton-accion reveal">Contáctanos</a>
         </section>
@@ -52,7 +53,8 @@
         <!-- Sección Sucursales -->
         <section id="sucursales" class="reveal">
             <div class="caption-sucursales">
-                <a href="" class="boton-accion --accion-secundario --bold reveal">Conoce nuestras sucursales</a>
+       <a href="sucursales.php" class="boton-accion --accion-secundario --bold reveal">Conoce nuestras sucursales</a>
+                
             </div>
             <div class="contenedor-imagen-sucursales">
                 <img class="imagen-sucursales" src="./img/sucursalazulejos.png" alt="Baños y azulejos Arciniega">
