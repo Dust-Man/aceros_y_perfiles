@@ -7,8 +7,9 @@
     <title>Panel de Administración CA</title>
     <link rel="stylesheet" href="../css/dashboard.css">
     <?php
-      include "./autentificacion.php";
-    ?> 
+        
+        include "./autentificacion.php";
+    ?>
 </head>
 
 <body>

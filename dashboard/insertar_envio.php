@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require '../php/conexionPDO.php';
     try {
         $conexion->beginTransaction();
-        $nota_id = $_GET['nota_id'];
+        $nota_id = $_POST['nota_id'];
         $vehiculo_id = $_POST['vehiculo_id'];
         $hora = $_POST['hora'];
         $fecha = $_POST['fecha'];

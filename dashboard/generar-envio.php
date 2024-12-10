@@ -9,6 +9,8 @@
     
 <?php
 include "./side_bar.php";
+include "./autentificacion.php";
+
 ?>
    <!-- Main Content -->
    <div class="main-content">
