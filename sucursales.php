@@ -9,10 +9,7 @@
    
 </head>
 <style>
-.reveal {
 
-  transition: opacity 1.5s ease-out, transform 0.5s ease-out; /* Transición suave */
-}
 </style>
 <body>
     <?php include "header.php"; ?>
@@ -87,6 +84,8 @@
     </main>
 
     <script src="./scripts/header.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
     
 </body>
 
