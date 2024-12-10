@@ -49,18 +49,18 @@
         <section id="servicios" class="layout3">
             <div class="servicio-landing servicio-aceros">
                 <p href="#contacto" class="asubbold reveal">Aceros, perfiles y<br> materiales de <br> construcción</p>
-                <p class="descripcionsg center">Encuentra desde varillas hasta perfiles estructurales con envío a
-                    domicilio.</p>
+                <!-- <p class="descripcionsg center">Encuentra desde varillas hasta perfiles estructurales con envío a
+                    domicilio.</p> -->
             </div>
             <div class="servicio-landing servicio-azulejos">
                 <p href="#contacto" class="asubbold reveal">Baños y azulejos</p>
-                <p class="descripcionsg center">Amplia gama de azulejos y accesorios para baño con estilo y durabilidad.
-                </p>
+                <!-- <p class="descripcionsg center">Amplia gama de azulejos y accesorios para baño con estilo y durabilidad.
+                </p> -->
             </div>
             <div class="servicio-landing servicio-pavimentaciones">
                 <p href="#contacto" class="asubbold reveal">Construcciones y <br> pavimentaciones</p>
-                <p class="descripcionsg center">Soluciones completas para pavimentaciones y proyectos de
-                    infraestructura.</p>
+                <!-- <p class="descripcionsg center">Soluciones completas para pavimentaciones y proyectos de
+                    infraestructura.</p> -->
             </div>
         </section>
 
@@ -184,7 +184,7 @@
         </section>
         <section id="conoce-proyecto" class="">
             <div class="caption-sucursales">
-                <a href="sucursales.php" class="boton-accion --accion-secundario --bold ">Conoce todos los
+                <a href="portafolio.php" class="boton-accion --accion-secundario --bold ">Conoce todos los
                     proyectos</a>
             </div>
         </section>

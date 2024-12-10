@@ -15,6 +15,7 @@
                 <li><a href="./registrar-cliente.php" data-section="registrar-cliente">Registrar cliente</a></li>
                 <li><a href="./registrar-empleado.php" data-section="registrar-empleado">Registrar empleado</a></li>
                 <li><a href="./registrar-vehiculo.php" data-section="registrar-vehiculo">Registrar vehículo</a></li>
+                <li><a href="./admin/" data-section="registrar-vehiculo">Administrar Base de Datos y Reportes (solo admin)</a></li>
             </ul>
 
             <div class="rol">Rol: </div>

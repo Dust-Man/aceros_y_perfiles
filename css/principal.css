@@ -785,6 +785,31 @@ nav a {
     padding: 25px;
     padding-top: 150px;
   }
+  .form-contacto{
+    padding: 10px;
+  }
+  .formas-contacto{
+    font-size: 16px;
+  }
+  .lista-de-formas li{
+    font-size: 20px;
+  }
+  #experiencia-ubicaciones{
+    padding: 10px;
+    text-align: center;
+  }
+  #experiencia-ubicaciones .texto-medio{
+    font-size: 30px;
+    padding: 0;
+    width: 100%;
+    padding-top: 20px;
+  }
+  .dos-columnas-flex{
+    padding: 5px;
+  }
+  .dos-columnas-flex--texto{
+    padding: 20px;
+  }
 }
 
 /* Estilos contenedores de las cards*/

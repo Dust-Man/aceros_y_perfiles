@@ -2,7 +2,7 @@
 $servidor = "localhost";
 $usuario = "root";
 $password = "";
-$nombre_bd = "arciniega";
+$nombre_bd = "arco";
 
 try {
     // Crear conexión PDO
