@@ -732,8 +732,11 @@ nav a {
 }
 .titulo-portafolio{
   font-weight: bold;
-  margin-top: 20px;
-  font-size: 25px;
+  color: #5e5d5d;
+  margin-top: 10px;
+  font-size: 20px;
+  text-transform: uppercase;
+  
 }
 /*RESPONSIVIDAD*/
 @media screen and (max-width: 767px) {

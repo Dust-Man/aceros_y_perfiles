@@ -13,9 +13,6 @@ include "./side_bar.php";
 
 ?>
 
-
-
-    
 </body>
 </html>
    <!-- Main Content -->

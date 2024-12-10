@@ -184,7 +184,7 @@
         </section>
         <section id="conoce-proyecto" class="">
             <div class="caption-sucursales">
-                <a href="sucursales.php" class="boton-accion --accion-secundario --bold reveal">Conoce todos los
+                <a href="sucursales.php" class="boton-accion --accion-secundario --bold ">Conoce todos los
                     proyectos</a>
             </div>
         </section>
