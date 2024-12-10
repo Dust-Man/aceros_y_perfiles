@@ -86,7 +86,6 @@ h1{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    width: 100%;
 }
 
 .card {
@@ -217,11 +216,13 @@ form .table-container {
 
 /* Estilo general de la tabla */
  .table {
-    width: 85%;
+    width: 100%;
     border-collapse: collapse;
     margin: 0;
     font-size: 1rem;
     color: #333;
+    margin: 0 auto;
+    overflow: scroll;
 }
 
 /* Encabezado de la tabla */
