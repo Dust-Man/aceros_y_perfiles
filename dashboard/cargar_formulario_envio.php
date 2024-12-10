@@ -169,4 +169,4 @@ if (isset($_GET['nota_id'])) {
 
     <button type="submit">Guardar Envío</button>
 </form>
-<script src="./envio.js"></script>
+<script src="./envio.js" defer></script>
