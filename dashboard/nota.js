@@ -3,24 +3,45 @@ document.addEventListener("DOMContentLoaded", () => {
     const resultTable = document.getElementById("resultTable");
     const resultTableBody = resultTable.querySelector("tbody");
     const selectedProductsTableBody = document.getElementById("selectedProducts");
+    const paginationContainer = document.getElementById("pagination");
 
-    // Buscar productos
-    const buscarProductos = (searchValue) => {
+    let currentPage = 1;  // Página inicial
+    let totalPages = 1;   // Total de páginas, que se actualizará desde el backend
+
+    // Función para deshabilitar y habilitar la validación del formulario
+    const toggleFormValidation = (disable = true) => {
+        const form = document.getElementById("notaForm");
+        for (let input of form.querySelectorAll("input, select")) {
+            if (input !== searchInput) { // Excluir el campo de búsqueda
+                input.disabled = disable;
+            }
+        }
+    };
+
+    // Función de búsqueda de productos con paginación
+    const buscarProductos = (searchValue, page = 1) => {
         if (!searchValue.trim()) {
             resultTable.style.display = "none";
             resultTableBody.innerHTML = "";
+            paginationContainer.innerHTML = ""; // Limpiar la paginación
             return;
         }
 
-        fetch(`./buscar.php?search=${encodeURIComponent(searchValue)}`)
+        // Deshabilitar la validación antes de hacer la petición
+        toggleFormValidation(true);
+
+        fetch(`./buscar.php?search=${encodeURIComponent(searchValue)}&pagina=${page}`)
             .then(response => {
                 if (!response.ok) throw new Error("Error en la solicitud");
                 return response.json();
             })
             .then(data => {
                 const productos = data.productos || [];
-                resultTableBody.innerHTML = "";
+                totalPages = data.totalPaginas || 1; // Actualizar el total de páginas
+                currentPage = page; // Actualizar la página actual
 
+                // Limpiar la tabla y mostrar productos
+                resultTableBody.innerHTML = "";
                 if (productos.length > 0) {
                     productos.forEach(producto => {
                         const row = document.createElement("tr");
@@ -41,11 +62,97 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else {
                     resultTable.style.display = "none";
                 }
+
+                // Actualizar paginación
+                actualizarPaginacion();
             })
             .catch(error => {
                 console.error("Error al buscar productos:", error);
                 resultTable.style.display = "none";
+            })
+            .finally(() => {
+                // Habilitar la validación después de la actualización
+                toggleFormValidation(false);
             });
+    };
+
+    // Función para mostrar los botones de paginación
+    const actualizarPaginacion = () => {
+        paginationContainer.innerHTML = ""; // Limpiar paginación existente
+
+        if (totalPages <= 1) return; // No hay paginación si hay solo una página
+
+        // Botón de página anterior
+        if (currentPage > 1) {
+            const prevButton = document.createElement("button");
+            prevButton.textContent = "Anterior";
+            prevButton.addEventListener("click", (e) => {
+                e.preventDefault(); // Prevenir comportamiento por defecto
+                buscarProductos(searchInput.value, currentPage - 1);
+            });
+            paginationContainer.appendChild(prevButton);
+        }
+
+        // Mostrar primeras 3 páginas y última página
+        const maxVisiblePages = 3; // Número máximo de páginas visibles al principio
+        let startPage = 1;
+        let endPage = totalPages;
+
+        // Mostrar páginas 1 a 3 o hasta la página 1 más algunas cercanas a la actual
+        if (totalPages > maxVisiblePages) {
+            // Si estamos cerca del principio o final, ajustamos las páginas a mostrar
+            if (currentPage <= maxVisiblePages) {
+                endPage = maxVisiblePages;
+            } else if (currentPage >= totalPages - maxVisiblePages + 1) {
+                startPage = totalPages - maxVisiblePages + 1;
+            } else {
+                startPage = currentPage - 1;
+                endPage = currentPage + 1;
+            }
+        }
+
+        // Botones de páginas
+        for (let i = startPage; i <= endPage; i++) {
+            const pageButton = document.createElement("button");
+            pageButton.textContent = i;
+            if (i === currentPage) {
+                pageButton.disabled = true; // Deshabilitar el botón de la página actual
+            }
+            pageButton.addEventListener("click", (e) => {
+                e.preventDefault(); // Prevenir comportamiento por defecto
+                buscarProductos(searchInput.value, i);
+            });
+            paginationContainer.appendChild(pageButton);
+        }
+
+        // Mostrar "..." si es necesario
+        if (endPage < totalPages - 1) {
+            const dots = document.createElement("a");
+            dots.textContent = "...";
+            paginationContainer.appendChild(dots);
+        }
+
+        // Mostrar la última página
+        if (endPage < totalPages) {
+            const lastPageButton = document.createElement("button");
+            lastPageButton.textContent = totalPages;
+            lastPageButton.addEventListener("click", (e) => {
+                e.preventDefault(); // Prevenir comportamiento por defecto
+                buscarProductos(searchInput.value, totalPages);
+            });
+            paginationContainer.appendChild(lastPageButton);
+        }
+
+        // Botón de página siguiente
+        if (currentPage < totalPages) {
+            const nextButton = document.createElement("button");
+            nextButton.textContent = "Siguiente";
+            nextButton.addEventListener("click", (e) => {
+                e.preventDefault(); // Prevenir comportamiento por defecto
+                buscarProductos(searchInput.value, currentPage + 1);
+            });
+            paginationContainer.appendChild(nextButton);
+        }
     };
 
     // Agregar producto al formulario de seleccionados
@@ -81,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Evento para búsqueda dinámica
     searchInput.addEventListener("input", () => {
         const searchValue = searchInput.value;
-        buscarProductos(searchValue);
+        buscarProductos(searchValue, 1); // Reseteamos la página a 1 al buscar
     });
 
     // Enviar el formulario con Fetch API

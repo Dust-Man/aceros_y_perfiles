@@ -73,7 +73,7 @@ if (isset($_GET['nota_id'])) {
     <input type="time" name="hora" id="hora" required>
 
     <div class="table-container">
-    <table>
+    <table class="table">
     <tr>
         <th>Producto</th>
         <th>Por Enviar</th>
