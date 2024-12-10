@@ -102,7 +102,7 @@ h1{
     transform: translateY(-5px);
 }
 
-/* Animations */
+/* Animations
 @keyframes slideIn {
     from {
         transform: translateX(-250px);
@@ -112,7 +112,7 @@ h1{
         transform: translateX(0);
         opacity: 1;
     }
-}
+} */
 
 .sidebar {
     animation: slideIn 0.5s ease-out;
@@ -147,6 +147,7 @@ form input[type="number"],
 form input[type="date"],
 form input[type="time"],
 form input[type="search"],
+form input[type="tel"],
 form select,
 form textarea {
     width: 100%;

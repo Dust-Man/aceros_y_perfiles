@@ -45,5 +45,6 @@
         </div>
     </main>
 </body>
+<script src="./scripts/header.js"></script>
 
 </html>

@@ -15,9 +15,6 @@ include "./autentificacion.php";
 
 ?>
 
-
-
-    
 </body>
 </html>
    <!-- Main Content -->

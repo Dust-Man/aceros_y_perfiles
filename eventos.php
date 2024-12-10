@@ -10,9 +10,7 @@
         body {
             background-color: #ffffff; /* Fondo blanco */
         }
-        .reveal {
-            transition: opacity 1.5s ease-out, transform 0.5s ease-out; /* Transición suave */
-        }
+      
     </style>
 </head>
 <body>
