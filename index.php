@@ -7,8 +7,9 @@
     <title>Aceros y Perfiles Arciniega</title>
     <link rel="stylesheet" href="./css/principal.css">
     <link rel="stylesheet" href="./css/carrusel.css">
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'>
+    <link rel='stylesheet'
+        href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css'>
     <link rel="icon" href="./img/logos/logo.png" type="image/png">
 </head>
 
@@ -141,40 +142,34 @@
         <section class="game-section">
             <h2 class="section-title reveal">Nuestro Trabajo</h2>
             <div class="owl-carousel custom-carousel owl-theme">
-                <div class="item active"
-                    style="background-image: url(./img/destileria.png);">
+                <div class="item active" style="background-image: url(./img/destileria.png);">
                     <div class="item-desc">
                         <h3>DESTILERIA ABASOLO JILOTEPEC</h3>
-                        
+
                     </div>
                 </div>
-                <div class="item"
-                    style="background-image: url(./img/atizapan.png);">
+                <div class="item" style="background-image: url(./img/atizapan.png);">
                     <div class="item-desc">
                         <h3>SUMINISTRO AUTOPISTA ATIZAPA-ATLACOMULCO</h3>
-                        
+
                     </div>
                 </div>
-                <div class="item"
-                    style="background-image: url(./img/caet.png);">
+                <div class="item" style="background-image: url(./img/caet.png);">
                     <div class="item-desc">
                         <h3>SUMINISTRO CAET - TRUPER</h3>
                     </div>
                 </div>
-                <div class="item"
-                    style="background-image: url(./img/techumbre.png);">
+                <div class="item" style="background-image: url(./img/techumbre.png);">
                     <div class="item-desc">
                         <h3>TECHUMBRE DONGU CHAPA DE MOTA</h3>
                     </div>
                 </div>
-                <div class="item"
-                    style="background-image: url(./img/caltex.png);">
+                <div class="item" style="background-image: url(./img/caltex.png);">
                     <div class="item-desc">
                         <h3>SUMINISTRO KALTEX</h3>
                     </div>
                 </div>
-                <div class="item"
-                    style="background-image: url(./img/bartes.png);">
+                <div class="item" style="background-image: url(./img/bartes.png);">
                     <div class="item-desc">
                         <h3>CONSTRUCCION ESCUELA DE BELLAS ARTES</h3>
                     </div>
@@ -201,7 +196,33 @@
                 </ul>
             </div>
             <div>
-                <?php include("./form-contacto.php"); ?>
+                <?php
+include './php/conexion.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nombre = mysqli_real_escape_string($conexion, $_POST['nombre']);
+    $email = mysqli_real_escape_string($conexion, $_POST['email']);
+    $telefono = mysqli_real_escape_string($conexion, $_POST['telefono']);
+    $mensaje = mysqli_real_escape_string($conexion, $_POST['mensaje']);
+   
+    $sql = "INSERT INTO CONTACTO (nombre, email, telefono, mensaje) VALUES ('$nombre', '$email', '$telefono','$mensaje')";
+    if (mysqli_query($conexion, $sql)) {
+        echo "<div class='exito' id='mensaje'><span>Tu mensaje se ha enviado. Nos pondremos en contacto contigo.</span><span id='cerrar-mensaje'>X</span></div>";
+    } else {
+        echo "Error: " . mysqli_error($conexion);
+    }
+}
+?>
+                <form action="index.php" method="post" class="form-contacto --form-landing padding-top-30px">
+                    <input class="padding-top-30px" type="text" name="nombre" id="nombre" placeholder="Nombre">
+                    <input type="tel" name="telefono" id="telefono" placeholder="teléfono">
+                    <input type="email" name="email" id="email" placeholder="Correo Electrónico">
+                    <textarea name="mensaje" id="mensaje" placeholder="mensaje"></textarea>
+                    <div class="boton-centro">
+                        <button type="submit" name="enviar" class="boton-envio ">Enviar</button>
+                    </div>
+                </form>
+                <script src="./scripts/mensajes.js"></script>
             </div>
         </section>
 
@@ -212,10 +233,14 @@
 
 
     </main>
+    <?php
+    include "footer.php"
+?>
 
     <script src="./scripts/header.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script><script  src="./script.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
+    <script src="./script.js"></script>
 
     <script src="./scripts/carousel.js"></script>
 </body>

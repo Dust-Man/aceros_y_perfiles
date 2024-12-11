@@ -33,6 +33,9 @@ if (isset($_GET['id'])) {
         <a href="noticias.php">Volver al blog</a>
     </div>
 </body>
+<?php
+    include "footer.php"
+?> 
 <script src="./scripts/header.js"></script>
 </html>
 
