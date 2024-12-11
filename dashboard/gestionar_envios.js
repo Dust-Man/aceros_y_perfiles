@@ -61,7 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                                     if (response.ok) {
                                         const result = await response.text();
-                                        alert('Envío guardado correctamente.');
+                                        alert(result);
+                                        
                                         window.location.href='./generar-envio.php';
                                     } else {
                                         const errorText = await response.text();

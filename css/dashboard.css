@@ -21,6 +21,7 @@ h1{
 
 /* Sidebar */
 .sidebar {
+    
     width: 18vw;
     background: #23282d;
     color: #fff;
@@ -29,6 +30,7 @@ h1{
     padding: 20px 0;
     position: fixed;
     min-height: 100vh;
+    overflow-y: auto;  /
 }
 
 .logo {
@@ -316,4 +318,121 @@ form .table-container {
 /* Separación entre la tabla y la paginación */
 table {
     margin-bottom: 30px;  /* Añadir un margen en la parte inferior de la tabla */
+}
+
+  /* Estilos de la sección principal */
+  .dashboard-main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 18vw;
+    width: 82vw;
+}
+
+/* Títulos */
+.header {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+}
+/* Contenido con el diseño en grid */
+.dashboard-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas para las primeras dos tarjetas */
+    gap: 20px;
+    grid-template-areas: 
+        "grafica1 grafica2"
+        "grafica3 productos"
+        "grafica3 choferes"; /* Ajuste para que 'grafica3' ocupe ambas columnas y 'choferes' esté en la fila de abajo */
+}
+
+/* Ajustar las tarjetas específicas */
+.grafica1 {
+    grid-area: grafica1;
+    width: 100%;
+    height: 300px; /* Ajusta la altura de las gráficas */
+}
+
+.grafica2 {
+    grid-area: grafica2;
+    width: 100%;
+    height: 300px; /* Ajusta la altura de las gráficas */
+}
+
+.grafica3 {
+    grid-area: grafica3;
+    width: 100%;
+    height: 400px; /* Ajusta la altura de la gráfica */
+}
+
+.productos {
+    grid-area: productos;
+    width: 100%;
+    height: 330px; /* Ajusta la altura de la lista */
+    overflow-y: auto; /* Si la lista es muy larga, habilita desplazamiento */
+}
+
+.choferes {
+    grid-area: choferes;
+    width: 100%;
+    height: 330px; /* Ajusta la altura de la lista */
+    overflow-y: auto; /* Si la lista es muy larga, habilita desplazamiento */
+}
+
+/* Estilos de las tarjetas (renombrado de .card a .dashboard-card) */
+.dashboard-card {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-card h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Estilo para el contenedor de productos */
+.product-card {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos de la lista de productos más vendidos */
+#productosMasVendidos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#productosMasVendidos li {
+    font-size: 16px;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#productosMasVendidos h3 {
+    text-align: center;
+}
+
+/* Estilos para la lista de mejores choferes */
+#mejoresChoferes li {
+    font-size: 16px;
+    color: #555;
+}
+.chofer-card {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
 }

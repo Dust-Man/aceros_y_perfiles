@@ -5,7 +5,7 @@
         <div class="sidebar">
             <div class="logo">Panel de Administración CA</div>
             <ul class="menu">
-                <li><a href="" data-section="dashboard">Dashboard</a></li>
+                <li><a href="./dashboard.php">Dashboard</a></li>
                 <li><a href="./registrar-producto.php" >Agregar al catalogo</a></li>
                 <li><a href="./agregar-proyecto.php" >Agregar proyecto</a></li>
                 <li><a href="./crear-post.php">Crear Post</a></li>
@@ -16,6 +16,8 @@
                 <li><a href="./registrar-empleado.php" data-section="registrar-empleado">Registrar empleado</a></li>
                 <li><a href="./registrar-vehiculo.php" data-section="registrar-vehiculo">Registrar vehículo</a></li>
                 <li><a href="./admin/" data-section="registrar-vehiculo">Administrar Base de Datos y Reportes (solo admin)</a></li>
+                <li><a href="../administracion/cierre_de_sesion.php" >Cerrar sesion</a></li>
+
             </ul>
 
             <div class="rol">Rol: </div>
