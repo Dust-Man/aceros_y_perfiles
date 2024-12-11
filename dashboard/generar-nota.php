@@ -71,6 +71,10 @@
                         <!-- Resultados dinámicos -->
                     </tbody>
                 </table>
+                <div  class="pagination" id="pagination">
+    <!--Y aqui la paginacion  -->
+</div>
+
 
                 <!-- Productos Seleccionados -->
                 <h3>Productos Seleccionados</h3>
