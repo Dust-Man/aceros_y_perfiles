@@ -6,6 +6,7 @@
             <div class="logo">Panel de Administración CA</div>
             <ul class="menu">
                 <li><a href="" data-section="dashboard">Dashboard</a></li>
+                <li><a href="./mensajes.php" >Mensajes</a></li>
                 <li><a href="./registrar-producto.php" >Agregar al catalogo</a></li>
                 <li><a href="./agregar-proyecto.php" >Agregar proyecto</a></li>
                 <li><a href="./crear-post.php">Crear Post</a></li>

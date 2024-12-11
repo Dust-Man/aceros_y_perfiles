@@ -36,6 +36,9 @@ if ($resultado->num_rows > 0) {
                 <p><b>Hora: </b>{$fila['hora']} </p>
                 <p><b>Vehículo: </b>{$fila['marca']} {$fila['modelo']} {$fila['placa']} </p>
                 <p><b>Chofer: </b>{$fila['empleado_nombre']} </p>
+                <p><b>Ruta: </b>{$fila['ruta']} </p>
+                <p><b>Dirección: </b>{$fila['direccion']} </p>
+
               </div>";
     
 } else {
