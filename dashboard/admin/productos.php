@@ -11,7 +11,7 @@ if ($pagina_actual < 1) {
 $inicio = ($pagina_actual - 1) * $registros_por_pagina;
 
 // Obtener productos con paginación
-$consulta = $conexion->prepare("SELECT producto_id, nombre, precio, stock, categoria, descripcion, clave FROM productos LIMIT :inicio, :registros");
+$consulta = $conexion->prepare("SELECT producto_id, nombre, precio, stock, categoria, clave FROM productos LIMIT :inicio, :registros");
 $consulta->bindValue(':inicio', $inicio, PDO::PARAM_INT);
 $consulta->bindValue(':registros', $registros_por_pagina, PDO::PARAM_INT);
 $consulta->execute();

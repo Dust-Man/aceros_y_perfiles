@@ -8,7 +8,12 @@
                 <li><a href="./clientes.php" data-section="dashboard">Clientes</a></li>
                 <li><a href="./productos.php" >Productos</a></li>
                 <li><a href="./vehiculos.php" >Vehículos</a></li>
-                <li><a href="./.php" >Agregar proyecto</a></li>
+                <li><a href="./empleados.php" >Empleados</a></li>
+                <li><a href="./notas.php" >Notas</a></li>
+                <li><a href="./envios.php" >Envíos</a></li>
+                <li><a href="./catalogo.php" >Catálogo</a></li>
+
+
             </ul>
 
             <div class="rol">Rol: </div>
