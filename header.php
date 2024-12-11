@@ -24,7 +24,7 @@
 
         <!-- Lista de navegación -->
         <ul class="nav__lista">
-            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="sobre_nosotros.php">Sobre nosotros</a></li>
             <li><a href="./productos.php">Productos</a></li>
             <li><a href="sucursales.php">Sucursales</a></li>
             <li><a href="contacto.php">Contacto</a></li>

@@ -38,7 +38,9 @@
 
 
  
-          
+<?php
+    include "footer.php"
+?>     
 </body>
 <script src="./scripts/header.js" defer></script>
 <script src="./scripts/buscar.js" defer></script>

@@ -169,10 +169,74 @@ form textarea:focus {
     box-shadow: 0 0 5px rgba(0, 115, 170, 0.5);
     outline: none;
 }
+.--envio p{
+    margin-top: 10px;
+    font-size: 20px;
+}
+.--envio{
+    margin-bottom: 20px;
+}
 
+.imprimir-btn,.regresar-btn{
+    text-decoration: none;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    background-color: #0073aa;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.imprimir-btn{
+    bottom: 50px;
+    right: 30px;
+}
+.regresar-btn{
+    right: 30px;
+    bottom: 150px;
+}
+
+.imprimir-btn span, .regresar-btn span{
+    font-size: 40px;
+}
+
+.imprimir{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 816px;
+    height: 950px;
+    padding: 5px;
+    background-color: #fff;
+}
+.imprimir div{
+    box-shadow: unset;
+}
+.imprimir div .card{
+    border: solid 1px #000;
+}
+.imprimir div .card:hover{
+    transform: unset;
+}
+.header-impresiones{
+    display: flex;
+    border-bottom: solid 7px #000;
+    margin-bottom: 20px;
+}
+.contenedor-logo-impresiones{
+    width: 100px;
+}
+.contenedor-logo-impresiones img{
+    width: 100%;
+}
+.ocultar{
+    display: none;
+}
 /* Botones */
 form button,
-form input[type="submit"], button {
+form input[type="submit"], button,.btn {
     background: #0073aa;
     color: #fff;
     padding: 10px 15px;
@@ -181,6 +245,12 @@ form input[type="submit"], button {
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.3s;
+}
+.btn{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
 }
 
 form button:hover,

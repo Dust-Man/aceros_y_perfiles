@@ -66,6 +66,9 @@ if (isset($_GET['nota_id'])) {
     <label for="ruta">Ruta:</label>
     <input type="text" name="ruta" id="ruta" required>
 
+    <label for="direccion">Dirección</label>
+    <input type="text" name="direccion" id="direccion">
+
     <label for="fecha">Fecha:</label>
     <input type="date" name="fecha" id="fecha" required>
 

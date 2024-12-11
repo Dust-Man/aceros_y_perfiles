@@ -293,8 +293,33 @@ nav a {
 .--sucursal-sur-oriente {
   background-image: url("../img/sucursales/sur-oriente.png");
 }
+.--sucursal-azulejo-bano{
+  background-image: url("../img/fondos/azulejos-banos.jpg");
+}
 
+.--imagen-vision{
+  background-image: url("../img/fondos/vision.jpg");
+}
 
+.--imagen-ladrillos-gris{
+  background-image: url("../img/fondos/pared-ladrillos.jpg");
+}
+
+.--imagen-gris{
+  background-image: url("../img/fondos/fondo-gris.jpg");
+}
+
+.--imagen-filosofia{
+  background-image: url("../img/fondos/filosofia.jpg");
+}
+
+.--imagen-engranes{
+  background-image: url("../img/fondos/engranes.jpeg");
+}
+
+.--imagen-perfiles{
+  background-image: url("../img/fondos/perfiles.jpg");
+}
 .--imagen-rifa{
   background-image: url("../img/fondos/rifa.jpg");
 }
@@ -303,9 +328,7 @@ nav a {
   background-image: url("../img/fondos/arqui.jpg");
 }
 
-.--imagen-gris{
-  background-image: url("../img/fondos/fondo-gris.jpg");
-}
+
 
 .--imagen-lugar{
   background-image: url("../img/fondos/azulejos-banos.jpg");
@@ -454,7 +477,29 @@ nav a {
   }
 } */
 /*LANDING PAGE */
+/*Sobre nosotros*/
+.nosotros-landing {
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--color-claro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nosotros-vis-mis {
+  background-image: url("../img/vision-mis.jpg");
+}
 
+.nosotros-equi-filo {
+  background-image: url("../img/equipo_filo.jpg");
+}
+
+.nosotros-maquinita {
+  background-image: url("../img/maquinari.jpg");
+}
 /*#sucursales*/
 .contenedor-imagen-sucursales {
   width: 100%;
@@ -827,6 +872,142 @@ nav a {
   padding-bottom: 2px;
   grid-template-columns: repeat(1, 1fr);
 }
+/*MENSAJES*/
+.exito,.error,.normal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 1rem .5rem;
+  border-radius: 4px;
+  color: #fff;
+  margin-bottom: 40px;
+  position: absolute; /* Cambiado a fixed para que se quede en la pantalla mientras se desplaza */
+  top: 100px; /* Ajusta según lo alto que quieras que esté */
+  left: 50%; /* Centra horizontalmente */
+  transform: translateX(-50%); /* Compensa la mitad del ancho para centrar */
+  z-index: 9999; /* Asegura que esté por encima de todo */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Para darle un poco de sombra y resaltar más */
+}
+.normal{
+  background-color: var(--color-principal);
+}
+.exito{
+  background-color: #4ba430;
+}
+.error{
+  background-color: #FA003F;
+}
+.mensaje_hidden{
+  display: none;
+}
+#cerrar-mensaje{
+  cursor: pointer;
+  padding: 5px;
+}
+/* Estilo footer */
+
+.footer-container {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 10px;
+  min-width: 200px;
+}
+
+.footer-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-links li {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links li a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+}
+
+.redes-icons {
+  margin-top: 10px;
+}
+
+.facebook-link {
+  display: inline-block;
+  margin-right: 10px;
+  color: #fff;
+  font-size: 50px;
+  text-decoration: none;
+}
+
+.facebook-link:hover {
+  color: #1877f2; /* Azul de Facebook */
+}
+
+.instagram-link {
+  display: inline-block;
+  margin-right: 10px;
+  color: #fff;
+  font-size: 50px;
+  text-decoration: none;
+}
+
+.instagram-link:hover {
+  color: #E1306C; /* rosa de putinstagram */
+}
+
 /* Form del input */
 .form {
   --timing: 0.3s;
