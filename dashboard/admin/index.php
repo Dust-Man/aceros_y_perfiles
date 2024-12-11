@@ -20,9 +20,7 @@
         <div class="main-content">
             <div class="content">
                 <!-- Aquí es donde se cargarán las secciones -->
-                <div class="card">Aquí una grafica</div>
-                <div class="card">Aquí otra</div>
-                <div class="card">Aquí una foto de tilin</div>
+                
             </div>
         </div>
     </div>
