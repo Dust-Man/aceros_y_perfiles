@@ -12,8 +12,7 @@
                 <li><a href="./notas.php" >Notas</a></li>
                 <li><a href="./envios.php" >Envíos</a></li>
                 <li><a href="./catalogo.php" >Catálogo</a></li>
-
-
+                <li><a href="../dashboard.php" >Dashboard</a></li>
             </ul>
 
             <div class="rol">Rol: </div>
