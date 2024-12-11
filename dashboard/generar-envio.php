@@ -9,7 +9,7 @@
     
 <?php
 include "./side_bar.php";
-include "./autentificacion.php";
+// include "./autentificacion.php";
 
 ?>
    <!-- Main Content -->

@@ -203,6 +203,7 @@ form textarea:focus {
     font-size: 40px;
 }
 
+
 .imprimir{
     margin: 0 auto;
     width: 100%;
@@ -432,7 +433,8 @@ table {
 .grafica3 {
     grid-area: grafica3;
     width: 100%;
-    height: 400px; /* Ajusta la altura de la gráfica */
+    height: 300px; /* Ajusta la altura de la gráfica */
+    padding: 30px;
 }
 
 .productos {
@@ -458,6 +460,7 @@ table {
     padding: 20px;
     display: flex;
     flex-direction: column;
+    min-height: fit-content;
 }
 
 .dashboard-card h3 {
@@ -467,7 +470,7 @@ table {
 }
 
 /* Estilo para el contenedor de productos */
-.product-card {
+.product-card,.chofer-card {
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -483,7 +486,7 @@ table {
     margin: 0;
 }
 
-#productosMasVendidos li {
+#productosMasVendidos li, #mejoresChoferes li {
     font-size: 16px;
     padding: 5px 0;
     border-bottom: 1px solid #eee;
@@ -494,15 +497,3 @@ table {
 }
 
 /* Estilos para la lista de mejores choferes */
-#mejoresChoferes li {
-    font-size: 16px;
-    color: #555;
-}
-.chofer-card {
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-}
