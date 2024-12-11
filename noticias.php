@@ -44,6 +44,10 @@
             <?php endwhile; ?>
         </div>
     </main>
+    <?php
+    include "footer.php"
+?> 
 </body>
+<script src="./scripts/header.js"></script>
 
 </html>

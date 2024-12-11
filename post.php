@@ -22,12 +22,21 @@ if (isset($_GET['id'])) {
 <body>
     <?php include 'header.php'; ?>
     <div class="contenedor-texto-grande">
-        <h1><?php echo htmlspecialchars($post['title']); ?></h1>
-        <p><em>Publicado el <?php echo $post['created_at']; ?></em></p>
-        <p><?php echo nl2br(htmlspecialchars($post['content'])); ?></p>
+        <div class="contenedor-imagen-noticia">
+            <?php
+            echo "<img class='imagen-noticia' src='./".$post['banner_url']."'>";
+            ?>
+        </div>
+        <h1 class="titulo-noticia"><?php echo htmlspecialchars($post['title']); ?></h1>
+        <p class="fecha-noticia"><em>Publicado el <?php echo $post['created_at']; ?></em></p>
+        <p class="contenido-noticia"><?php echo nl2br(htmlspecialchars($post['content'])); ?></p>
         <a href="noticias.php">Volver al blog</a>
     </div>
 </body>
+<?php
+    include "footer.php"
+?> 
+<script src="./scripts/header.js"></script>
 </html>
 
 <?php

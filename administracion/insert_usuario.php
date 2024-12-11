@@ -12,7 +12,6 @@ $stmt = $conexion->prepare("INSERT INTO usuarios (nombre_usuario, password, rol)
 $stmt->bind_param("sss", $usuario, $hashed_password, $rol);
 
 if ($stmt->execute()) {
-    echo "Usuario registrado con éxito.";
 } else {
     echo "Error: " . $conexion->error;
 }

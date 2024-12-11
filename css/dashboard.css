@@ -7,24 +7,28 @@
 }
 
 body {
-
-    
     background: #f4f4f9;
+}
+h1{
+    margin: 20px;
+    text-align: center;
 }
 .dashboard{
     display: flex;
-    grid-templte-columns: 1fr 1fr;
+    grid-templte-columns: 1fr 1fr ;
     height: 100vh;
 }
 
 /* Sidebar */
 .sidebar {
-    width: 250px;
+    width: 18vw;
     background: #23282d;
     color: #fff;
     display: flex;
     flex-direction: column;
     padding: 20px 0;
+    position: fixed;
+    min-height: 100vh;
 }
 
 .logo {
@@ -67,6 +71,8 @@ body {
 .main-content {
     flex-grow: 1;
     padding: 20px;
+    margin-left: 18vw;
+    width: 82vw;
 }
 
 .header {
@@ -95,7 +101,7 @@ body {
     transform: translateY(-5px);
 }
 
-/* Animations */
+/* Animations
 @keyframes slideIn {
     from {
         transform: translateX(-250px);
@@ -105,7 +111,7 @@ body {
         transform: translateX(0);
         opacity: 1;
     }
-}
+} */
 
 .sidebar {
     animation: slideIn 0.5s ease-out;
@@ -137,6 +143,10 @@ form input[type="email"],
 form input[type="password"],
 form input[type="file"],
 form input[type="number"],
+form input[type="date"],
+form input[type="time"],
+form input[type="search"],
+form input[type="tel"],
 form select,
 form textarea {
     width: 100%;
@@ -157,10 +167,74 @@ form textarea:focus {
     box-shadow: 0 0 5px rgba(0, 115, 170, 0.5);
     outline: none;
 }
+.--envio p{
+    margin-top: 10px;
+    font-size: 20px;
+}
+.--envio{
+    margin-bottom: 20px;
+}
 
+.imprimir-btn,.regresar-btn{
+    text-decoration: none;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    background-color: #0073aa;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.imprimir-btn{
+    bottom: 50px;
+    right: 30px;
+}
+.regresar-btn{
+    right: 30px;
+    bottom: 150px;
+}
+
+.imprimir-btn span, .regresar-btn span{
+    font-size: 40px;
+}
+
+.imprimir{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 816px;
+    height: 950px;
+    padding: 5px;
+    background-color: #fff;
+}
+.imprimir div{
+    box-shadow: unset;
+}
+.imprimir div .card{
+    border: solid 1px #000;
+}
+.imprimir div .card:hover{
+    transform: unset;
+}
+.header-impresiones{
+    display: flex;
+    border-bottom: solid 7px #000;
+    margin-bottom: 20px;
+}
+.contenedor-logo-impresiones{
+    width: 100px;
+}
+.contenedor-logo-impresiones img{
+    width: 100%;
+}
+.ocultar{
+    display: none;
+}
 /* Botones */
 form button,
-form input[type="submit"] {
+form input[type="submit"], button,.btn {
     background: #0073aa;
     color: #fff;
     padding: 10px 15px;
@@ -169,6 +243,12 @@ form input[type="submit"] {
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.3s;
+}
+.btn{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
 }
 
 form button:hover,
@@ -194,4 +274,116 @@ form .success {
     color: #5cb85c;
     font-size: 0.875rem;
     margin-bottom: 10px;
+}
+/* Contenedor de la tabla */
+form .table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+/* Estilo general de la tabla */
+ .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+    margin: 0 auto;
+    overflow: scroll;
+}
+
+/* Encabezado de la tabla */
+.table th {
+    background: #0073aa;
+    color: #fff;
+    text-align: left;
+    padding: 10px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+}
+
+/* Celdas de la tabla */
+.table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    background: #fff;
+    transition: background-color 0.3s ease;
+}
+
+/* Alternar color de filas */
+.table  tr:nth-child(even) td {
+    background: #f4f4f9;
+}
+
+/* Hover en filas */
+.table tr:hover td {
+    background: #e8f6ff;
+}
+
+/* Celdas editables o de entrada */
+.table td input[type="text"],
+.table select,
+.table td textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #333;
+    background: #f9f9f9;
+    box-sizing: border-box;
+}
+
+/* Botones dentro de la tabla */
+.table td button {
+    background: #0073aa;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.table td button:hover {
+    background: #005f8a;
+}
+/*Paginacion */
+
+.paginacion {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;  /* Agregar margen inferior para separación de la tabla */
+}
+
+.paginacion a {
+    margin: 0 8px;  /* Mayor margen horizontal entre los elementos */
+    padding: 10px 18px;  /* Aumento de tamaño para una mejor visibilidad */
+    text-decoration: none;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;  /* Mejor transición */
+}
+
+.paginacion a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.paginacion a.activo {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Separación entre la tabla y la paginación */
+table {
+    margin-bottom: 30px;  /* Añadir un margen en la parte inferior de la tabla */
 }

@@ -1,3 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+<?php
+
+include "./side_bar.php";
+
+?>
+
+   <!-- Main Content -->
+   <div class="main-content">
+            <div class="content">
+                
 <?php
 include '../php/conexion.php';
 
@@ -23,16 +43,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 }
             }// Nueva línea para el banner
 
-    $sql = "INSERT INTO productos (nombre, descripcion, imagen, precio, stock, categoria, clave) VALUES ('$title', '$content', '$banner_url','$precio', '$stock','$categoria', '$clave')";
+    $sql = "INSERT INTO productos_mostrar (nombre, descripcion, imagen, precio, stock, categoria, clave) VALUES ('$title', '$content', '$banner_url','$precio', '$stock','$categoria', '$clave')";
     if (mysqli_query($conexion, $sql)) {
     } else {
         echo "Error: " . mysqli_error($conexion);
     }
 }
 ?>
-
 <form action="registrar-producto.php" method="POST" enctype="multipart/form-data">
-    <label for="title">Título:</label>
+<h1>Agregar al catalogo</h1>
+
+    <label for="title">Nombre:</label>
     <input type="text" id="title" name="title" required>
 
     <label for="content">Descripción:</label>
@@ -60,3 +81,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <button type="submit">Guardar</button>
 </form>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    
+</body>
+</html>
+
+
+
+
