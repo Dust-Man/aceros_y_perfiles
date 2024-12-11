@@ -60,8 +60,8 @@ $resultado = mysqli_query($conexion, $consulta);
 if ($resultado->num_rows > 0) {
     while ($fila = $resultado->fetch_assoc()) 
         echo "<div class='card'>
-                <p>Producto: {$fila['nombre']}</p>
-                <p>Cantidad: {$fila['cantidad']}</p>
+                <p><b>Producto:</b> {$fila['nombre']}</p>
+                <p><b>Cantidad:</B> {$fila['cantidad']}</p>
               </div>";
     
 } else {

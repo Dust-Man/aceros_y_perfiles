@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <h1>Crear Nuevo Artículo</h1>
     <form action="create.php" method="POST" enctype="multipart/form-data">
-        <label for="title">Título:</label>
+        <label for="title">Nombre:</label>
         <input type="text" id="title" name="title" required>
         
         <label for="content">Contenido:</label>

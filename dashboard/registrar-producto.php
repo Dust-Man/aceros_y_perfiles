@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <label for="categoria">Categoría:</label>
     <select name="categoria" id="categoria">
         <option value="materiales">materiales</option>
-        <option value="herramientas">herrmientas</option>
+        <option value="herramientas">herramientas</option>
     </select>
 
     <label for="clave">Clave:</label>
