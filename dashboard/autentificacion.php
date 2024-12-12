@@ -1,17 +1,12 @@
 <?php
-session_start(); 
-
-if (!isset($_SESSION['usuario_id'])) {
-    // Si no hay sesión activa  redirigir al login
-    header('Location: ../administracion/forms/login.php');
-    exit();
+// Validar si la sesión ya está activa antes de iniciar una nueva
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
 }
 
-$rol = $_SESSION['rol'] ?? '';
-
-if ($rol !== 'superusuario' && strpos($_SERVER['PHP_SELF'], 'dashboard') !== false) {
-    // Si el usuario no es superusuario e intenta acceder al dashboard, redirigir
-    header('Location: ');
+if (!isset($_SESSION['usuario_id'])) {
+    // Si no hay sesión activa, redirigir al login
+    header('Location: ../administracion/forms/login.php');
     exit();
 }
 ?>

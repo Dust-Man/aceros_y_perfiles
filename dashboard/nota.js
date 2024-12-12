@@ -142,6 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             paginationContainer.appendChild(lastPageButton);
         }
+        
 
         // Botón de página siguiente
         if (currentPage < totalPages) {

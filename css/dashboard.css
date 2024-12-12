@@ -21,7 +21,6 @@ h1{
 
 /* Sidebar */
 .sidebar {
-    
     width: 18vw;
     background: #23282d;
     color: #fff;
@@ -30,7 +29,6 @@ h1{
     padding: 20px 0;
     position: fixed;
     min-height: 100vh;
-    overflow-y: auto; 
 }
 
 .logo {
@@ -63,7 +61,7 @@ h1{
     color: #fff;
 }
 .rol{
-    padding: 10px 20px;
+    padding: 0px 20px;
     font-weight: bold;
 }
 
@@ -496,4 +494,4 @@ table {
     text-align: center;
 }
 
-/* Estilos para la lista de mejores choferes */
+/* Estilos formr crear usuario */
