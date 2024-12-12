@@ -47,7 +47,7 @@ document
       const formData = new FormData(this);
 
       try {
-        const response = await fetch("../insert_usuario.php", {
+        const response = await fetch("./insert_usuario.php", {
           method: "POST",
           body: formData,
         });

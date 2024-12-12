@@ -11,6 +11,7 @@
 
     <?php
 // Configuración de conexión a la base de datos
+include "./autentifiacion_admin.php";
 require '../../php/conexionPDO.php';
 
 // Configuración de la paginación

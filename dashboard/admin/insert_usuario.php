@@ -1,5 +1,5 @@
 <?php
-include "../php/conexion.php";
+include "../../php/conexion.php";
 
 $usuario =trim($_POST['usuario']);
 $rol = trim($_POST['rol']);

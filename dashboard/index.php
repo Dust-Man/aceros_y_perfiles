@@ -9,6 +9,7 @@
 <body>
 
 <?php
+include "./autentificacion.php";
 include "./side_bar.php";
 
 ?>
