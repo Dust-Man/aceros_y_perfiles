@@ -21,7 +21,7 @@
                 <a href="vision_mision.php" class="asubbold">Visión y Misión</a>
             </div>
             <div class="nosotros-landing nosotros-equi-filo">
-                <a href="equipo_filofia.php" class="asubbold">Nuestro Equipo y <br>Filosofía Empleada</a>
+                <a href="equipo_filosofia.php" class="asubbold">Nuestro Equipo y <br>Filosofía Empleada</a>
             </div>
             <div class="nosotros-landing nosotros-maquinita">
                 <a href="maquinaria.php" class="asubbold">Maquinaria Disponible</a>

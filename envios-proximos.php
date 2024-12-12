@@ -22,35 +22,8 @@ include '../php/conexion.php';
 <div class="content">
 
 <?php
+$consulta = "SELECT * FROM envio_completo WHERE fecha_envio >= CURDATE() ";
 
-$consulta = "
-SELECT 
-    envios.envio_id AS envio_id,
-    envios.nota_id AS nota_id,
-    notas.cliente_id AS cliente_id,
-    clientes.nombre AS cliente_nombre,
-    envios.vehiculo_id AS vehiculo_id,
-    vehiculos.placa AS placa,
-    vehiculos.marca AS marca,
-    vehiculos.modelo AS modelo,
-    envios.hora AS hora,
-    envios.fecha_envio AS fecha_envio,
-    envios.empleado_id AS empleado_id,
-    empleados.nombre AS empleado_nombre,
-    envios.ruta AS ruta,
-    envios.direccion AS direccion
-FROM 
-    envios
-    JOIN notas 
-        ON notas.nota_id = envios.nota_id
-    JOIN vehiculos 
-        ON envios.vehiculo_id = vehiculos.vehiculo_id
-    JOIN empleados 
-        ON envios.empleado_id = empleados.empleado_id
-    JOIN clientes 
-        ON notas.cliente_id = clientes.cliente_id
-    WHERE fecha_envio >= CURDATE();
-";
 $resultado = mysqli_query($conexion, $consulta);
 
 if ($resultado->num_rows > 0) {

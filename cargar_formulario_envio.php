@@ -82,24 +82,7 @@ if (isset($_GET['nota_id'])) {
         <th>Por Enviar</th>
         <th>Enviar</th>
     <?php
-    $consulta = "
-SELECT 
-    prod_por_enviar.id_productos_enviar AS id_productos_enviar,
-    prod_por_enviar.id_nota AS id_nota,
-    prod_por_enviar.encabezado_productos_id AS encabezado_productos_id,
-    encabezado.producto_id AS producto_id,
-    productos.nombre AS nombre,
-    prod_por_enviar.enviados AS enviados,
-    prod_por_enviar.por_enviar AS por_enviar
-FROM 
-    prod_por_enviar
-    JOIN encabezado 
-        ON prod_por_enviar.encabezado_productos_id = encabezado.nota_detalle
-    JOIN productos 
-        ON encabezado.producto_id = productos.producto_id
-    WHERE id_nota = '$nota_id' AND por_enviar > 0
-";
-
+    $consulta = "SELECT * FROM productos_en_prod_env WHERE id_nota = '$nota_id' AND por_enviar > 0";
     $resultado = mysqli_query($conexion, $consulta);
 
     if ($resultado->num_rows > 0) {

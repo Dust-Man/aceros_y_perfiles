@@ -91,8 +91,8 @@ include "./side_bar.php";
         <!-- Paginación -->
         <div class="paginacion">
             <?php if ($pagina_actual > 1): ?>
-                <a href="productos_mostrar.php?pagina=1">Primera</a>
-                <a href="productos_mostrar.php?pagina=<?= $pagina_actual - 1 ?>">Anterior</a>
+                <a href="catalogo.php?pagina=1">Primera</a>
+                <a href="catalogo.php?pagina=<?= $pagina_actual - 1 ?>">Anterior</a>
             <?php endif; ?>
         
             <?php for ($i = $inicio_paginacion; $i <= $fin_paginacion; $i++): ?>
@@ -101,13 +101,13 @@ include "./side_bar.php";
                         <strong><?= $i ?></strong>
                     </a>
                 <?php else: ?>
-                    <a href="productos_mostrar.php?pagina=<?= $i ?>"><?= $i ?></a>
+                    <a href="catalogo.php?pagina=<?= $i ?>"><?= $i ?></a>
                 <?php endif; ?>
             <?php endfor; ?>
         
             <?php if ($pagina_actual < $total_paginas): ?>
-                <a href="productos_mostrar.php?pagina=<?= $pagina_actual + 1 ?>">Siguiente</a>
-                <a href="productos_mostrar.php?pagina=<?= $total_paginas ?>">Última</a>
+                <a href="catalogo.php?pagina=<?= $pagina_actual + 1 ?>">Siguiente</a>
+                <a href="catalogo.php?pagina=<?= $total_paginas ?>">Última</a>
             <?php endif; ?>
         </div>
     </div>
